@@ -9,15 +9,25 @@
     body {
       font-family: Arial;
       text-align: center;
+        }
+    header nav{
+      background-color: black;
+      text-align: center;
+      margin-top: 0;
+      padding: 10px;
     }
-    header {
-      background: black;
-      padding: 10px 0;
+    header nav ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
-    header nav a {
-      color: white;
-      margin: 0 15px;
+    header nav ul li{
+      display: inline;
+    }
+    header nav a{
       text-decoration: none;
+      color: white;
+      margin: 15px;
     }
     main {
       display: flex;
@@ -55,9 +65,11 @@
 
   <header>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
