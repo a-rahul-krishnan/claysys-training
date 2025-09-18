@@ -9,14 +9,24 @@
       font-family: Arial;
       text-align: center;
     }
-    header {
-      background: black;
+    header nav{
+      background-color: black;
+      text-align: center;
+      margin-top: 0;
       padding: 10px;
     }
-    header nav a {
+    header nav ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    header nav ul li{
+      display: inline;
+    }
+    header nav a{
+      text-decoration: none;
       color: white;
       margin: 15px;
-      text-decoration: none;
     }
     h1 {
       margin: 20px;
@@ -71,9 +81,11 @@
 
   <header>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        </ul>
     </nav>
   </header>
 
