@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Exercise</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            padding: 15px;
+            background-color:#ccc;
+            text-align: center;
+        }
+        h1{
+            font-weight: normal;
+        }
+        footer{
+            text-align: center;
+            background-color: rgb(212, 210, 210);
+            padding: 10px;
+            margin-top: 32vh;
+        }
+        .box{
+            background-color:rgb(210, 210, 210);
+            border: 2px solid black;
+            margin :20px;
+            width: 400px;
+            height: 300px;
+            position: relative;
+        }
+        .within-box{
+            background-color: rgb(34, 190, 34);
+            position:absolute;
+            width: 180px;
+            height: 20px;
+            margin:20px;
+            padding: 10px;
+            color: white;
+        }
+        .within-window{
+            background-color: rgb(80, 132, 228);
+            position:fixed;
+            width: 180px;
+            height: 20px;
+            margin:20px;
+            padding: 10px;
+            color: white;
+        }
+        main{
+            text-align:center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Draggable Exercise</h1>
+    </header>
+    <main class="window">
+        <div class="box">
+            <div class="within-box">
+                Drag me within the box
+            </div>
+        </div>
+        <div class="within-window">
+                Drag me within window
+        </div>
+    </main>
+    <footer>
+        © 2025 Draggable Divs Exercise
+    </footer>
+</body>
+</html>
