@@ -128,6 +128,8 @@ td {
     padding: 10px;
     border-radius: 5px;
     margin-left: 5px;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
 }
 
 .profile-tab:hover {
@@ -156,6 +158,8 @@ header {
     margin-right: 5px;
     margin-left: 5px;
     background-color: white;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
 }
 
 #notification:hover {
@@ -337,7 +341,8 @@ input[type=search] {
     margin: 5px;
     border-radius: 5px;
     font-size: 1rem;
-
+    transition-duration: 250ms;
+    transition-timing-function: ease;
 }
 
 #cancel:hover {
@@ -353,6 +358,8 @@ input[type=search] {
     border-radius: 5px;
     margin-right: auto;
     font-size: 1rem;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
 }
 
 #accept:hover {
