@@ -11,7 +11,7 @@ html {
 body {
     display: grid;
     height: 100vh;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 17% 83%;
     margin: 10px;
 }
 
