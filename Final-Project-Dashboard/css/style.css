@@ -114,7 +114,7 @@ table {
 table,
 th,
 td {
-    padding: 5px;
+    padding: 7px;
 }
 
 #profile {
@@ -222,9 +222,10 @@ input[type=search] {
     margin: 0 10px 0px 10px;
 }
 
-.card-container h4 {
+.card-container h3 {
     padding: 10px;
     margin-left: 20px;
+    font-weight: 500;
 }
 
 .completed-card i {
@@ -272,6 +273,7 @@ input[type=search] {
 
 .main-card .table-info th {
     border-bottom: 1px solid rgba(220, 220, 220);
+    font-weight:500;
 }
 
 #main-table {
@@ -289,6 +291,7 @@ input[type=search] {
 
 .main-card .table-content th {
     border-bottom: 1px solid rgba(220, 220, 220);
+    font-weight: 500;
 }
 
 .main-card .table-content td {
