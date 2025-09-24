@@ -4,6 +4,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: grid;
     height: 100vh;
@@ -32,7 +36,7 @@ nav a {
     width: 90%;
     border-radius: 5px;
     padding: 10px;
-
+    transition: background-color 250ms ease;
 }
 
 nav a:hover {
