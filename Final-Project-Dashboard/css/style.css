@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 15% 85%;
+    margin: 10px;
+}
+
+.sidebar {
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 3%;
+}
+
+.main {
+    border-radius: 20px;
+    background-color: rgba(229, 248, 255);
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    color: #000;
+    width: 90%;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+nav a:hover {
+    background-color: #00afff;
+    color: white;
+}
+
+nav a:hover i {
+    color: #00afff;
+}
+
+nav a:active {
+    background-color: #00afff;
+    color: black;
+}
+
+#nav-orders a {
+    background-color: #00afff;
+    color: white;
+}
+
+#nav-orders i {
+    color: #00afff;
+}
+
+nav a:active i {
+    color: #000;
+}
+
+nav i {
+    color: rgba(220, 220, 220);
+    font-size: 1rem;
+    background-color: white;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 30px;
+}
+
+nav li {
+    margin: 2% 2% 2% auto;
+}
+
+.logo {
+    margin-top: 20px;
+}
+
+#logo-pick {
+    color: #00afff;
+}
+
+#logo-your {
+    font-weight: lighter;
+}
+
+#logo-cloth {
+    color: #70b873;
+}
+
+.page-heading {
+    font-weight: lighter;
+}
+
+.details h3 {
+    font-weight: lighter;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    padding: 5px;
+}
+
+#profile {
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.profile-tab {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.profile-tab:hover {
+    background-color: #c7e9db;
+}
+
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 98%;
+    padding: 10px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+#notification {
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 4px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: white;
+}
+
+#notification:hover {
+    background-color: rgba(220, 220, 220);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    width: 95%;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.search-bar i {
+    font-size: 1rem;
+    padding: 0 5px 0 5px;
+    border-right: 1px solid rgba(220, 220, 220);
+}
+
+.card-container i:hover {
+    cursor: pointer;
+}
+
+input[type=search] {
+    border: none;
+    width: 100%;
+    outline: none;
+    height: min-content;
+    padding: 0 5px 0 5px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#filter {
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#filter:hover {
+    cursor: pointer;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin: 0 10px 0px 10px;
+}
+
+.card-container h4 {
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.completed-card i {
+    background-color: #dff0e8;
+    border-radius: 3px;
+    padding: 2px;
+    font-size: 1rem;
+    margin: 0px 5px 0px 5px;
+}
+
+.completed-card {
+    width: auto;
+    margin-bottom: 10px;
+    background-color: #c7e9db;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.completed-card table {
+    margin-left: 20px;
+    width: 100%;
+    text-align: justify;
+}
+
+
+.completed-label {
+    background-color: #70b873;
+    color: white;
+    padding: 5px;
+    border-radius: 35px;
+}
+
+.main-card {
+    width: auto;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.main-card .table-info {
+    width: 100%;
+    text-align: justify;
+    margin-bottom: 5px;
+}
+
+.main-card .table-info th {
+    border-bottom: 1px solid rgba(220, 220, 220);
+}
+
+#main-table {
+    border-radius: 15px;
+    border: 1px solid rgba(220, 220, 220);
+    margin: 0 2.5% 1.5% 2.5%;
+
+}
+
+.main-card .table-content {
+    width: 100%;
+    text-align: justify;
+
+}
+
+.main-card .table-content th {
+    border-bottom: 1px solid rgba(220, 220, 220);
+}
+
+.main-card .table-content td {
+    border-bottom: 1px solid rgba(220, 220, 220);
+}
+
+
+.end-card {
+    width: auto;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.end-card table {
+    margin-left: 20px;
+    width: 100%;
+    text-align: justify;
+}
+
+
+.main-card i {
+    background-color: #dff0e8;
+    border-radius: 3px;
+    padding: 2px;
+    font-size: 1rem;
+    margin: 0px 5px 0px 5px;
+}
+
+.end-card i {
+    background-color: #dff0e8;
+    border-radius: 3px;
+    font-size: 1rem;
+    padding: 2px;
+    margin: 0px 5px 0px 5px;
+}
+
+.pending-label {
+    background-color: #caf0fe;
+    color: #00afff;
+    padding: 5px;
+    border-radius: 35px;
+}
+
+#cancel {
+    color: #00afff;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #00afff;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+
+}
+
+#cancel:hover {
+    background-color: #00aeff3a;
+}
+
+#accept {
+    color: white;
+    padding: 10px;
+    background-color: #00afff;
+    border: 1px solid #00afff;
+    margin: 5px;
+    border-radius: 5px;
+    margin-right: auto;
+    font-size: 1rem;
+}
+
+#accept:hover {
+    color: #000;
+}
+
+#total-price-row {
+    font-size: large;
+}
+
+#total-price-row td {
+    border: none;
+
+}
+
+#table-button-row td {
+    border: none;
+}
+
+.table-button {
+    display: flex;
+    justify-content: end;
+    margin: 0 30px 15px 15px;
+}
+
+@media (max-width:768px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    nav li {
+        display: inline-block;
+        font-size: 0.7rem;
+    }
+
+    .logo {
+        text-align: center;
+        margin: 0;
+    }
+}
+
+@media (max-width:480px) {
+    * {
+        font-size: 0.7rem;
+    }
+
+    nav {
+        display: none;
+    }
+
+}
