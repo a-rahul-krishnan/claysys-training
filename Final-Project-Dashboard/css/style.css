@@ -422,15 +422,6 @@ input[type=search] {
     }
 }
 
-@media (max-width:600px) {
-    nav i {
-        font-size: 0.3rem;
-    }
-    nav a{
-        font-size: 0.3rem;
-    }
-
-}
 
 @media (max-width:480px) {
 
@@ -444,6 +435,14 @@ input[type=search] {
 
     .sidebar {
         display: none;
+    }
+
+}
+
+@media (max-width:375px) {
+
+    * {
+        font-size: 0.55rem;
     }
 
 }
