@@ -423,8 +423,11 @@ input[type=search] {
 }
 
 @media (max-width:600px) {
-    nav a {
-        font-size: 0.4rem;
+    nav i {
+        font-size: 0.6rem;
+    }
+    nav a{
+        font-size: 0.5rem;
     }
 
 }
