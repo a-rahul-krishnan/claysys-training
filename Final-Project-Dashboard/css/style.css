@@ -411,7 +411,7 @@ input[type=search] {
         font-size: 0.7rem;
     }
 
-    nav {
+    .sidebar {
         display: none;
     }
 
