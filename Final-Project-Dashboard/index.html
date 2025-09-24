@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pick Your Cloth</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <h3 class="logo">
+        <span id="logo-pick">Pick</span> <span id="logo-your">Your</span>
+        <span id="logo-cloth">Cloth</span>
+      </h3>
+      <nav>
+        <ul>
+          <li>
+            <a href=""><i class="bxr bx-dashboard-alt"></i> Dashboard </a>
+          </li>
+          <li id="nav-orders">
+            <a href=""><i class="bxr bx-cart"></i> Orders </a>
+          </li>
+          <li>
+            <a href=""><i class="bxr bx-pie-chart-alt"></i> Statistic </a>
+          </li>
+          <li>
+            <a href=""><i class="bxr bx-package"></i> Product </a>
+          </li>
+          <li>
+            <a href=""><i class="bxr bx-candlestick"></i> Stock </a>
+          </li>
+          <li>
+            <a href=""><i class="bxr bx-price-tag"></i> Offer </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main">
+      <header>
+        <h3 class="page-heading">Order</h3>
+        <div class="header-right">
+          <div class="search-bar">
+            <i class="bxr bx-search-alt"></i>
+            <input type="search" class="search-input" placeholder="Search in Knock N' Door" />
+          </div>
+          <i class="bxr bx-bell" id="notification"></i>
+          <div class="profile-tab">
+            <img src="assets/images/profile.jpg" alt="profile" id="profile" /><i class="bxr bx-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+      <div class="info">
+        <div class="details">
+          <h3>Pickup 1</h3>
+          <p>24 Orders - 9:05 am</p>
+        </div>
+        <select name="filter" id="filter">
+          <option value="Pickups">Pickups</option>
+        </select>
+      </div>
+      <div class="card-container">
+        <div class="completed-card">
+          <table>
+            <tr>
+              <td>#2539</td>
+              <td>Jordan Smith</td>
+              <td>31 July 2020</td>
+              <td>€46.00</td>
+              <td><span class="completed-label">Completed</span></td>
+              <td>
+                <i class="bxr bxs-cog"></i> <i class="bxr bx-chevron-down"></i>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="main-card">
+          <table class="table-info">
+            <tr>
+              <th>Order Id</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th>Action <i class="bxr bx-chevron-up"></i></th>
+            </tr>
+            <tr>
+              <td>#2540</td>
+              <td>Rowena Rice</td>
+              <td>31 July 2020</td>
+              <td>€62.00</td>
+              <td><span class="pending-label">Pending</span></td>
+              <td><i class="bxr bxs-cog"></i></td>
+            </tr>
+          </table>
+          <h4>Order Details</h4>
+          <div id="main-table">
+            <table class="table-content">
+              <tr>
+                <th>Sn</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Price</th>
+              </tr>
+              <tr>
+                <td>1.</td>
+                <td>Cheese Stack</td>
+                <td>1 pic</td>
+                <td>€2.00</td>
+                <td>€2.00</td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>Greek Style Salad</td>
+                <td>2 pic</td>
+                <td>€4.00</td>
+                <td>€8.00</td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>30 Chicken Satay & Peanut Dip</td>
+                <td>3 pic</td>
+                <td>€11.00</td>
+                <td>€33.00</td>
+              </tr>
+              <tr>
+                <td>4.</td>
+                <td>Wrap Platter</td>
+                <td>1 pic</td>
+                <td>€15.00</td>
+                <td>€15.00</td>
+              </tr>
+              <tr>
+                <td>5.</td>
+                <td>Moroccan style couscous</td>
+                <td>2 pic</td>
+                <td>€3.00</td>
+                <td>€6.00</td>
+              </tr>
+              <tr id="total-price-row">
+                <td></td>
+                <td>Total Price</td>
+                <td></td>
+                <td></td>
+                <td>€62.00</td>
+              </tr>
+              <tr id="table-button-row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+            <div class="table-button">
+              <div>
+                <button id="cancel">Cancel order</button>
+                <button id="accept">Accept for pickup</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="end-card">
+          <table class="next-table">
+            <tr>
+              <td>#2541</td>
+              <td>Harrison Sarratt</td>
+              <td>31 July 2020</td>
+              <td>€116.00</td>
+              <td><span class="pending-label">Pending</span></td>
+              <td>
+                <i class="bxr bxs-cog"></i> <i class="bxr bx-chevron-down"></i>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
