@@ -349,6 +349,10 @@ input[type=search] {
     background-color: #00aeff3a;
 }
 
+#cancel:active {
+    background-color: white;
+}
+
 #accept {
     color: white;
     padding: 10px;
@@ -364,6 +368,10 @@ input[type=search] {
 
 #accept:hover {
     color: #000;
+}
+
+#accept:active {
+    color: white;
 }
 
 #total-price-row {
@@ -388,19 +396,21 @@ input[type=search] {
 @media (max-width:768px) {
     body {
         grid-template-columns: 1fr;
-        grid-template-rows:auto 1fr;
+        grid-template-rows: auto 1fr;
     }
 
     nav li {
         display: inline-block;
     }
 
-    nav a{
+    nav a {
         font-size: 1rem;
     }
+
     nav i {
         font-size: 1rem;
     }
+
     .logo {
         text-align: center;
         margin: 0;
