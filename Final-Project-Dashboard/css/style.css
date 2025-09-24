@@ -392,9 +392,11 @@ input[type=search] {
 
     nav li {
         display: inline-block;
-        font-size: 0.7rem;
     }
 
+    nav a{
+        font-size: 1rem;
+    }
     .logo {
         text-align: center;
         margin: 0;
