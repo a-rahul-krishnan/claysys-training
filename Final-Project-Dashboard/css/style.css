@@ -447,16 +447,29 @@ input[type=search] {
 
 @media (max-width:480px) {
 
+    .logo{
+        display: block;
+    }
+
     html{
         height: 100vh;
     }
 
+
     * {
         font-size: 0.7rem;
     }
+    nav {
+        display: flex;
+        justify-content: center;
+    }
 
-    .sidebar {
-        display: none;
+    nav li {
+        width: auto;
+    }
+
+    nav a{
+        width: auto;
     }
     
     .main-card th {
