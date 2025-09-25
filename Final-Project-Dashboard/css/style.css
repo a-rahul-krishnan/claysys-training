@@ -412,7 +412,6 @@ input[type=search] {
 }
 
 .dropdown {
-  position: relative;
   display: inline-block;
 }
 
