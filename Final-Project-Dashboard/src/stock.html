@@ -58,9 +58,11 @@
           <h3>Pickup 1</h3>
           <p>24 Orders - 9:05 am</p>
         </div>
+        <div class="filter-container">
         <select name="filter" id="filter">
           <option value="Stocks">Stocks</option>
         </select>
+        </div>
       </div>
       <div class="card-container">
 
@@ -96,7 +98,15 @@
               <td>31 July 2020</td>
               <td>€62.00</td>
               <td><span class="pending-label">Pending</span></td>
-              <td><i class="bxr bxs-cog"></i></td>
+              <td>
+                <div class="dropdown">
+                <i class="bxr bxs-cog" id="dropbtn"></i>
+                <div class="dropdown-content">
+                      <a href="#">Update<i class="bxr bx-edit"></i></a>
+                      <a href="#">Delete <i class="bxr bx-trash"></i></a>
+                </div>
+                </div>
+              </td>
             </tr>
           </table>
 

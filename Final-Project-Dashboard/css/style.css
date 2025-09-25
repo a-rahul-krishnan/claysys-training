@@ -210,10 +210,11 @@ input[type=search] {
     background-color: white;
     border: none;
     font-size: 1rem;
-    padding: 0.7rem;
     border-radius: 5px;
     outline: none;
+    padding: 0.5rem 0.7rem 0.5rem 0.7rem;
 }
+
 
 #filter:hover {
     cursor: pointer;
@@ -409,6 +410,35 @@ input[type=search] {
     justify-content: end;
     margin: auto 1.3rem 1.2rem auto;
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;   
+  position: absolute;
+  background: white;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(220, 220, 220);
+}
+
 
 @media (max-width:768px) {
     body {
