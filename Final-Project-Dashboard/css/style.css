@@ -11,7 +11,7 @@ html {
 body {
     display: grid;
     height: 100vh;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 16% 84%;
     margin: 1rem;
 }
 
@@ -133,7 +133,6 @@ th, td {
     align-items: center;
     padding: 10px;
     border-radius: 5px;
-    margin-left: 5px;
     transition-duration: 250ms;
     transition-timing-function: ease;
 }
