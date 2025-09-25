@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pick Your Cloth</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Product</title>
+    <link rel="stylesheet" href="../css/style.css" />
     <link
       href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet" />
   </head>
   <body>
     <div class="sidebar">
-      <a href="index.html" id="home-link">
+      <a href="../index.html" id="home-link">
       <h3 class="logo">
         <span id="logo-pick">Pick</span> <span id="logo-your">Your</span>
         <span id="logo-cloth">Cloth</span>
@@ -19,29 +19,29 @@
       <nav>
         <ul>
           <li>
-            <a href="src/dashboard.html"><i class="bxr bx-dashboard-alt"></i> Dashboard </a>
+            <a href="dashboard.html"><i class="bxr bx-dashboard-alt"></i> Dashboard </a>
           </li>
           <li>
-            <a href="src/orders.html"><i class="bxr bx-cart"></i> Orders </a>
+            <a href="orders.html"><i class="bxr bx-cart"></i> Orders </a>
           </li>
           <li>
-            <a href="src/statistic.html"><i class="bxr bx-pie-chart-alt"></i> Statistic </a>
+            <a href="statistic.html"><i class="bxr bx-pie-chart-alt"></i> Statistic </a>
+          </li>
+          <li id="current-tab">
+            <a href="product.html"><i class="bxr bx-package"></i> Product </a>
           </li>
           <li>
-            <a href="src/product.html"><i class="bxr bx-package"></i> Product </a>
+            <a href="stock.html"><i class="bxr bx-candlestick"></i> Stock </a>
           </li>
           <li>
-            <a href="src/stock.html"><i class="bxr bx-candlestick"></i> Stock </a>
-          </li>
-          <li>
-            <a href="src/offer.html"><i class="bxr bx-price-tag"></i> Offer </a>
+            <a href="offer.html"><i class="bxr bx-price-tag"></i> Offer </a>
           </li>
         </ul>
       </nav>
     </div>
     <div class="main">
       <header>
-        <h3 class="page-heading">Home</h3>
+        <h3 class="page-heading">Product</h3>
         <div class="header-right">
           <div class="search-bar">
             <i class="bxr bx-search-alt"></i>
@@ -49,17 +49,17 @@
           </div>
           <i class="bxr bx-bell" id="notification"></i>
           <div class="profile-tab">
-            <img src="assets/images/profile.jpg" alt="profile" id="profile" /><i class="bxr bx-chevron-down"></i>
+            <img src="../assets/images/profile.jpg" alt="profile" id="profile" /><i class="bxr bx-chevron-down"></i>
           </div>
         </div>
       </header>
       <div class="info">
         <div class="details">
-          <h3>Pickup 1</h3>
+          <h3>Product 1</h3>
           <p>24 Orders - 9:05 am</p>
         </div>
         <select name="filter" id="filter">
-          <option value="Pickups">Pickups</option>
+          <option value="Products">Products</option>
         </select>
       </div>
       <div class="card-container">

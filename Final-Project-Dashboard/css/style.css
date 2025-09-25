@@ -53,13 +53,18 @@ nav a:active {
     color: black;
 }
 
-#nav-orders a {
+#current-tab a {
     background-color: #00afff;
     color: white;
 }
 
-#nav-orders i {
+#current-tab i {
     color: #00afff;
+}
+
+#home-link{
+    text-decoration: none;
+    color: #000;
 }
 
 nav a:active i {
