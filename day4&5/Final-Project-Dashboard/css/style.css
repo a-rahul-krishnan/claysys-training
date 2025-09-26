@@ -266,6 +266,8 @@ input[type=search] {
     margin-bottom: 10px;
     background-color: white;
     border-radius: 5px;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
 }
 
 .main-card .table-info {
@@ -294,6 +296,7 @@ input[type=search] {
     border-radius: 15px;
     border: 1px solid rgba(220, 220, 220);
     margin: 0 2.5% 3% 2.5%;
+    min-width: 480px;
 
 }
 
