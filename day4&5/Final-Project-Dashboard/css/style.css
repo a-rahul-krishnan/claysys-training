@@ -490,7 +490,7 @@ input[type=search] {
 
 
     * {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 
     nav {
@@ -530,14 +530,6 @@ input[type=search] {
     th,
     td {
         padding: 0.3rem 0.3rem 0.3rem 0rem;
-    }
-
-}
-
-@media (max-width:375px) {
-
-    * {
-        font-size: 0.6rem;
     }
 
 }
