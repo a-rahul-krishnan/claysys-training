@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container-1 {
+    border: 1px solid #1cace3;
+    border-radius: 4px;
+    width: 30rem;
+}
+
+.container-2 {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 10px;
+    justify-content: center;
+}
+
+
+input {
+    border-radius: 5px;
+    border: 0.5px solid rgba(220, 220, 220);
+    padding: 0.5rem;
+    outline: none;
+    display: block;
+    margin: 0.4rem auto 0.4rem auto;
+    width: 90%;
+}
+
+.add-product-btn {
+    background-color: #007bff;
+    color: white;
+    outline: none;
+    border: 0;
+    padding: 0.5rem;
+    margin:  1rem 1.4rem 1rem 1.4rem;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.add-product-btn:hover {
+    background-color: #0063cc;
+    cursor: pointer;
+}
+
+.add-product-btn:active {
+    color: black;
+}
+
+
+table, td, th{
+    width:100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th{
+    background-color: rgba(220, 220, 220);
+    padding: 0.4rem;
+}
+
+td{
+    padding: 0.4rem;
+}
+
