@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Budget Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+  </head>
+  <body>
+    <div class="side-bar">
+      <h2>Personal Budget Dashboard</h2>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html" id="current-tab"
+              ><i class="bxr bx-currency-notes"></i> Transaction</a
+            >
+          </li>
+          <li>
+            <a href="src/"><i class="bxr bx-piggy-bank"></i> Savings</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main">
+      <span>/ Transaction :</span>
+      <div class="overview">
+        <div class="overview-card" id="income-overview-card">
+          <i class="bxr bx-plus-circle"></i>
+          <div>
+            <p>Income:</p>
+            <b>Rs.2000</b>
+          </div>
+        </div>
+
+        <div class="overview-card" id="expense-overview-card">
+          <i class="bxr bx-minus-circle"></i>
+          <div>
+            <p>Expense:</p>
+            <b>Rs.300</b>
+          </div>
+        </div>
+
+        <div class="overview-card" id="remaining-overview-card">
+          <i class="bxr bx-equal-circle"></i>
+          <div>
+            <p>Remaining:</p>
+            <b>Rs.1700</b>
+          </div>
+        </div>
+
+        <div class="overview-card" id="progress-overview-card">
+          <i class="bxr bx-future"></i>
+          <div>
+            <p>Savings:</p>
+            <div class="progress-bar-border">
+              <div class="progress-bar"><b>50%</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-section">
+        <div class="transaction-section">
+          <div class="add-transaction-section">
+            <h3>Add Transaction:</h3>
+
+            <label
+              ><b>Transaction Type:</b>
+              <input
+                type="radio"
+                id="income"
+                name="transaction-type"
+                value="income"
+              />
+              <label for="income" class="radio-label"> Income</label>
+              <input
+                type="radio"
+                id="expense"
+                name="transaction-type"
+                value="expense"
+              />
+              <label for="expense" class="radio-label"> Expense</label>
+            </label>
+            <label for="amount"
+              ><b>Amount:</b><input type="number" id="amount" name="amount"
+            /></label>
+            <label for="category"
+              ><b>Category:</b>
+              <select name="category" id="category">
+                <option value="Salary">Salary</option>
+                <option value="Pocket Money">Pocket Money</option>
+                <option value="Rent">Rent</option>
+                <option value="Fuel">Fuel</option>
+                <option value="Transport">Transport</option>
+                <option value="Food">Food</option>
+                <option value="Health">Health</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Parking">Parking</option>
+              </select>
+            </label>
+            <label for="date"><b>Date:</b><input type="date" /></label>
+            <button class="add-transaction-btn">Add Transaction</button>
+          </div>
+          <div class="add-section-list">
+            <h3>Transactions:</h3>
+
+            <table>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+
+              <tr class="income-row">
+                <td>03/10/25</td>
+                <td>Pocket Money</td>
+                <td>Income</td>
+                <td>Rs.2000</td>
+                <td>
+                  <button id="edit-btn"><i class="bxr bx-edit"></i></button
+                  ><button id="delete-btn">
+                    <i class="bxr bx-trash-x"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="expense-row">
+                <td>03/10/25</td>
+                <td>Food</td>
+                <td>Expense</td>
+                <td>Rs.250</td>
+                <td>
+                  <button id="edit-btn"><i class="bxr bx-edit"></i></button
+                  ><button id="delete-btn">
+                    <i class="bxr bx-trash-x"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="expense-row">
+                <td>03/10/25</td>
+                <td>Parking</td>
+                <td>Expense</td>
+                <td>Rs.50</td>
+                <td>
+                  <button id="edit-btn"><i class="bxr bx-edit"></i></button
+                  ><button id="delete-btn">
+                    <i class="bxr bx-trash-x"></i>
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="graph-section">
+          <h3>Expense Categorization:</h3>
+          <canvas
+            id="categoryChart"
+            style="width: 100%; max-width: 400px"
+          ></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const categoryCtx = document.getElementById("categoryChart");
+      new Chart(categoryCtx, {
+        type: "doughnut",
+        data: {
+          labels: ["Food", "Parking"],
+          datasets: [
+            {
+              backgroundColor: ["tomato", "cornflowerblue"],
+              data: [250, 50],
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: { display: true, position: "bottom" },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
