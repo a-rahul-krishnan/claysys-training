@@ -131,9 +131,9 @@ nav ul {
 }
 
 .progress-bar {
-    width: 50%;
+    width: 85%;
     height: 2rem;
-    background-color: lime;
+    background-color: yellowgreen;
     border-radius: 0.5rem;
 }
 
