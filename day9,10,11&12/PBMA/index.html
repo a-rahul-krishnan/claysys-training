@@ -17,9 +17,7 @@
       <nav>
         <ul>
           <li>
-            <a href="index.html" id="current-tab"
-              ><i class="bxr bx-currency-notes"></i> Transaction</a
-            >
+            <a href="index.html" id="current-tab"><i class="bxr bx-currency-notes"></i> Transaction</a>
           </li>
           <li>
             <a href="src/"><i class="bxr bx-piggy-bank"></i> Savings</a>
@@ -71,8 +69,9 @@
           <div class="add-transaction-section">
             <h3>Add Transaction:</h3>
 
-            <label
-              ><b>Transaction Type:</b>
+            <label><b>Transaction Type:</b>
+              
+              <div>
               <input
                 type="radio"
                 id="income"
@@ -87,12 +86,12 @@
                 value="expense"
               />
               <label for="expense" class="radio-label"> Expense</label>
+              </div>
             </label>
             <label for="amount"
-              ><b>Amount:</b><input type="number" id="amount" name="amount"
+              ><b>Amount:</b><input type="number" id="amount" name="amount" placeholder="Enter Amount"
             /></label>
-            <label for="category"
-              ><b>Category:</b>
+            <label for="category"><b>Category:</b>
               <select name="category" id="category">
                 <option value="Salary">Salary</option>
                 <option value="Pocket Money">Pocket Money</option>
@@ -105,60 +104,54 @@
                 <option value="Parking">Parking</option>
               </select>
             </label>
-            <label for="date"><b>Date:</b><input type="date" /></label>
+            <label for="date"><b>Date:</b><input type="date" id="date" placeholder="Select Date"/></label>
             <button class="add-transaction-btn">Add Transaction</button>
           </div>
           <div class="add-section-list">
             <h3>Transactions:</h3>
 
-            <table>
-              <tr>
-                <th>Date</th>
-                <th>Category</th>
-                <th>Type</th>
-                <th>Amount</th>
-                <th>Action</th>
-              </tr>
+            <div class="list-items">
 
-              <tr class="income-row">
-                <td>03/10/25</td>
-                <td>Pocket Money</td>
-                <td>Income</td>
-                <td>Rs.2000</td>
-                <td>
-                  <button id="edit-btn"><i class="bxr bx-edit"></i></button
-                  ><button id="delete-btn">
-                    <i class="bxr bx-trash-x"></i>
-                  </button>
-                </td>
-              </tr>
+            <div class="income-row">
+              <div class="row-info-1">
+              <i class="bxr bx-plus-circle" id="income-icon"></i>
+              3/10/25
+              </div>
+              <p>Pocket Money</p>
+              
+              <div>
+              Rs.2000
+              <button id="edit-btn"><i class="bxr bx-edit"></i></button>
+              <button id="delete-btn"><i class="bxr bx-trash-x"></i></button>
+              </div>
+            </div>
 
-              <tr class="expense-row">
-                <td>03/10/25</td>
-                <td>Food</td>
-                <td>Expense</td>
-                <td>Rs.250</td>
-                <td>
-                  <button id="edit-btn"><i class="bxr bx-edit"></i></button
-                  ><button id="delete-btn">
-                    <i class="bxr bx-trash-x"></i>
-                  </button>
-                </td>
-              </tr>
+            <div class="expense-row">
+              <div  class="row-info-1">
+              <i class="bxr bx-minus-circle" id="expense-icon"></i>
+              3/10/25
+              </div>
+              <p>Food</p>
+              <div>
+              Rs.250
+              <button id="edit-btn"><i class="bxr bx-edit"></i></button>
+              <button id="delete-btn"><i class="bxr bx-trash-x"></i></button>
+              </div>
+            </div>
 
-              <tr class="expense-row">
-                <td>03/10/25</td>
-                <td>Parking</td>
-                <td>Expense</td>
-                <td>Rs.50</td>
-                <td>
-                  <button id="edit-btn"><i class="bxr bx-edit"></i></button
-                  ><button id="delete-btn">
-                    <i class="bxr bx-trash-x"></i>
-                  </button>
-                </td>
-              </tr>
-            </table>
+            <div class="expense-row">
+              <div class="row-info-1">
+              <i class="bxr bx-minus-circle" id="expense-icon"></i> 
+              3/10/25 
+              </div>
+              <p>Parking</p>
+              <div>
+              Rs.50
+              <button id="edit-btn"><i class="bxr bx-edit"></i></button>
+              <button id="delete-btn"><i class="bxr bx-trash-x"></i></button>
+              </div>
+            </div>
+            </div>
           </div>
         </div>
         <div class="graph-section">
