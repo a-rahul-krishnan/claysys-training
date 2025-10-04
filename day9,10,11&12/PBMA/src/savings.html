@@ -3,28 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Budget Dashboard</title>
+    <title>Personal Budget Dashboard - Savings Goals</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet"/>
   </head>
   <body>
+
+        <div id="new-goal-popup">
+            <label for="goal-name">Goal Name: <input type="text" id="goal-name"></label>
+            <label for="goal-amount">Goal Amount (Rs.): <input type="number" id="goal-amount"></label>
+            <label for="contribution-amount">Contribution (Rs.): <input type="number" id="contribution-amount"></label>
+            <div><button class="add-goal-btn" onclick="newGoalPopupClose();">Add</button> <button class="cancel-goal-btn" onclick="newGoalPopupClose();">Cancel</button></div>
+        </div>
     
     <div class="side-bar">
       <h2>Personal Budget Dashboard</h2>
       <nav>
         <ul>
           <li>
-            <a href="../index.html" ><i class="bxr bx-currency-notes"></i> Transaction</a>
+            <a href="../index.html" ><i class="bxr bx-currency-notes"></i> Transactions</a>
           </li>
           <li>
-            <a href="savings.html" id="current-tab"><i class="bxr bx-piggy-bank"></i> Savings</a>
+            <a href="savings.html" id="current-tab"><i class="bxr bx-piggy-bank"></i> Savings Goals</a>
           </li>
         </ul>
       </nav>
     </div>
 
     <div class="main">
-      <span>/ Savings :</span>
+      <span>/ Savings Goals:</span>
+
       
+
+        <button class="new-savings-btn" onclick="newGoalPopupOpen();"> New Goal + </button>
+        <div class="goals-grid">
+        <!-- Model:
+        Goal Name
+        Goal amount
+        Contribution Amount
+        Add Button
+        cancel button
+        -->
+        <div class="goals-card">
+            <div class="goals-card-header">
+                <h3>Vaccation Fund</h3>
+            </div>
+
+            <div class="goals-card-content">
+                <div class="status-bar-border">
+                    <div class="status-bar">20%</div>
+                </div>
+                <button>Contribute (Rs.)</button>
+            </div>
+        </div>
+
+         <div class="goals-card">
+            <div class="goals-card-header">
+                <h3>iPhone</h3>
+            </div>
+
+            <div class="goals-card-content">
+                <div class="status-bar-border">
+                    <div class="status-bar">20%</div>
+                </div>
+                <button>Contribute (Rs.)</button>
+            </div>
+        </div>
+
+         
+
+
+    </div>
+
+  <script src="../js/savings.js" >
+    
+  </script>  
   </body>
 </html>

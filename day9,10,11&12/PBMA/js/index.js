@@ -16,3 +16,4 @@ const categoryCtx = document.getElementById("categoryChart");
           },
         },
       });
+      
