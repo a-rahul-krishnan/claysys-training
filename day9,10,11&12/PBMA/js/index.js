@@ -16,6 +16,7 @@ let expenseChart = new Chart(categoryCtx, {
           "teal",
           "salmon",
           "slateblue",
+          "pink"
         ],
         data: [],
       },
