@@ -127,10 +127,18 @@ nav ul {
     background-color: cornflowerblue;
 }
 
+#progress-overview i {
+    background-color: cornflowerblue;
+}
+
+#progress-overview{
+    width:fit-content;
+}
+
 .progress-bar-border {
     border: 1px solid black;
     height: 2rem;
-    width: 10rem;
+    width: 9rem;
     margin: 0.5rem 0px 0.5rem 0px;
     border-radius: 0.5rem;
 }
@@ -345,6 +353,21 @@ nav ul {
     display:none;
 }
 
+#update-goal-popup {
+    border: 1px solid rgba(220, 220, 220);
+    border-radius: 0.2rem;
+    margin-top: 1rem;
+    background-color: white;
+    padding: 0.5rem;
+    position: fixed;
+    justify-items:end;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    display:none;
+}
+
 .goals-grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -365,7 +388,7 @@ nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.3rem 0.3rem 0rem 0rem;
+    border-radius: 0.2rem 0.2rem 0rem 0rem;
 
 }
 
@@ -398,6 +421,32 @@ nav ul {
     border: 1px solid yellowgreen;
     padding: 0.3rem;
     border-radius: 0.2rem;
+    transition: ease 200ms;
+}
+
+.goals-card-content button:hover{
+    background-color: white;
+    color: yellowgreen;
+}
+
+.goals-card-content button:active{
+    background-color: yellowgreen;
+    color: black;
+
+}
+
+#completed-goal-card{
+    border: 1px solid green;
+}
+
+
+#completed-goal-header{
+    background-color: green;
+}
+
+#completed-goal-statusbar{
+    background-color: green;
+    width: 100%;
 }
 
 
@@ -412,6 +461,20 @@ nav ul {
 
     .graph-section {
         margin: 1rem 0px 0px 0px;
+    }
+
+    .goals-grid{
+        grid-template-columns: 1fr 1fr;
+        gap:1rem;
+    }
+
+    .goals-card{
+    height: 12rem;
+    width: 12rem;
+    }
+
+    .goals-card-header{
+    height: 6rem;
     }
 
 }
@@ -437,7 +500,6 @@ nav ul {
     .income-row * , .expense-row *{
         font-size: 1rem;
     }
-
         
     #delete-btn i, #edit-btn i {
         font-size: 1rem;
@@ -446,9 +508,15 @@ nav ul {
     .list-items {
         overflow-x: auto;
     }
+
     .income-row,
     .expense-row {
         min-width: 325px; 
+    }
+
+    .goals-grid{
+        grid-template-columns: 1fr;
+        gap:1rem;
     }
 
 

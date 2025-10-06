@@ -13,7 +13,15 @@
             <label for="goal-name">Goal Name: <input type="text" id="goal-name"></label>
             <label for="goal-amount">Goal Amount (Rs.): <input type="number" id="goal-amount"></label>
             <label for="contribution-amount">Contribution (Rs.): <input type="number" id="contribution-amount"></label>
-            <div><button class="add-goal-btn" onclick="newGoalPopupClose();">Add</button> <button class="cancel-goal-btn" onclick="newGoalPopupClose();">Cancel</button></div>
+            <div><button class="add-goal-btn" onclick="">Add</button> <button class="cancel-goal-btn" onclick="newGoalPopupClose();">Cancel</button></div>
+        </div>
+
+        <div id="update-goal-popup">
+            <label for="balance-amount">Balance (Rs.): <input type="number" id="balance-amount" readonly></label>
+            <label for="goal-name">Goal Name: <input type="text" id="goal-name"></label>
+            <label for="goal-amount">Goal Amount (Rs.): <input type="number" id="goal-amount"></label>
+            <label for="contribution-amount">Contribution (Rs.): <input type="number" id="contribution-amount"></label>
+            <div><button class="add-goal-btn" onclick="">Add</button> <button class="cancel-goal-btn" onclick="updateGoalPopupClose();">Cancel</button></div>
         </div>
     
     <div class="side-bar">
@@ -32,18 +40,19 @@
 
     <div class="main">
       <span>/ Savings Goals:</span>
-
-      
+         <div class="overview-card" id="progress-overview">
+          <i class="bxr bx-future"></i>
+          <div>
+            <p>Savings:</p>
+            <div class="progress-bar-border">
+              <div class="progress-bar"><b>85%</b></div>
+            </div>
+          </div>
+        </div>     
 
         <button class="new-savings-btn" onclick="newGoalPopupOpen();"> New Goal + </button>
         <div class="goals-grid">
-        <!-- Model:
-        Goal Name
-        Goal amount
-        Contribution Amount
-        Add Button
-        cancel button
-        -->
+
         <div class="goals-card">
             <div class="goals-card-header">
                 <h3>Vaccation Fund</h3>
@@ -53,20 +62,33 @@
                 <div class="status-bar-border">
                     <div class="status-bar">20%</div>
                 </div>
-                <button>Contribute (Rs.)</button>
+                <button onclick="updateGoalPopupOpen();">Contribute (+) </button>
             </div>
         </div>
 
-         <div class="goals-card">
-            <div class="goals-card-header">
+         <div class="goals-card" id="completed-goal-card">
+            <div class="goals-card-header" id="completed-goal-header">
                 <h3>iPhone</h3>
+            </div>
+
+            <div class="goals-card-content">
+                <div class="status-bar-border">
+                    <div class="status-bar" id="completed-goal-statusbar">100%</div>
+                </div>
+                <button onclick="updateGoalPopupOpen();">Contribute (+) </button>
+            </div>
+        </div>
+
+        <div class="goals-card">
+            <div class="goals-card-header">
+                <h3>House</h3>
             </div>
 
             <div class="goals-card-content">
                 <div class="status-bar-border">
                     <div class="status-bar">20%</div>
                 </div>
-                <button>Contribute (Rs.)</button>
+                <button onclick="updateGoalPopupOpen();">Contribute (+) </button>
             </div>
         </div>
 
