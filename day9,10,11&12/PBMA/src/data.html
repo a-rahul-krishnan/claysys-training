@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Budget Dashboard - Export/Import</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="side-bar">
+    <h2>Personal Budget Dashboard</h2>
+    <nav>
+      <ul>
+        <li><a href="../index.html"><i class="bxr bx-currency-notes"></i> Transactions</a></li>
+        <li><a href="savings.html"><i class="bxr bx-piggy-bank"></i> Savings Goals</a></li>
+        <li><a href="data.html" id="current-tab"><i class="bxr bx-form"></i> Export/Import</a></li>
+      </ul>
+    </nav>
+    <div style="margin-top:1rem;">
+      <span style="margin-left:10px;">Dark Mode</span>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="main">
+    <span>/ Export / Import:</span>
+
+    <div class="export-import-section">
+      <h3>Export Data</h3>
+      <button id="export-btn" class="new-savings-btn">Export Transactions (CSV)</button>
+
+      <h3 style="margin-top:1rem;">Import Data</h3>
+      <input type="file" id="import-file" accept=".csv" />
+      <button id="import-btn" class="add-goal-btn">Import Transactions</button>
+    </div>
+  </div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/darkmode.js"></script>
+</body>
+</html>

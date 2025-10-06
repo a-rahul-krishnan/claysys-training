@@ -490,8 +490,6 @@ body.dark-mode #update-goal-popup {
 
 
 
-
-
 body.dark-mode .add-transaction-section,
 body.dark-mode .add-section-list,
 body.dark-mode .graph-section,
@@ -503,7 +501,7 @@ body.dark-mode .goals-card {
 }
 
 
-    /* ===== Dark Mode Switch ===== */
+/* ===== Dark Mode Switch ===== */
 .switch {
   position: relative;
   display: inline-block;
