@@ -171,8 +171,6 @@ function updateSavingsProgress() {
 
 
 // ====== Initial Render ======
-localStorage.clear();
-transactions=[];
 renderTransactions();
 updateOverview();
 updateExpenseChart();
