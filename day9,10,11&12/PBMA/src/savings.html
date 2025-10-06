@@ -5,100 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Budget Dashboard - Savings Goals</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet"/>
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- ===== New Goal Popup ===== -->
+    <div id="new-goal-popup">
+      <label for="goal-name">Goal Name:
+        <input type="text" id="goal-name" />
+      </label>
+      <label for="goal-amount">Goal Amount (Rs.):
+        <input type="number" id="goal-amount" />
+      </label>
+      <label for="contribution-amount">Contribution (Rs.):
+        <input type="number" id="contribution-amount" />
+      </label>
+      <div>
+        <button class="add-goal-btn" id="add-goal-btn">Add</button>
+        <button class="cancel-goal-btn" onclick="newGoalPopupClose();">Cancel</button>
+      </div>
+    </div>
 
-        <div id="new-goal-popup">
-            <label for="goal-name">Goal Name: <input type="text" id="goal-name"></label>
-            <label for="goal-amount">Goal Amount (Rs.): <input type="number" id="goal-amount"></label>
-            <label for="contribution-amount">Contribution (Rs.): <input type="number" id="contribution-amount"></label>
-            <div><button class="add-goal-btn" onclick="">Add</button> <button class="cancel-goal-btn" onclick="newGoalPopupClose();">Cancel</button></div>
-        </div>
+    <!-- ===== Update Goal Popup ===== -->
+    <div id="update-goal-popup"></div>
 
-        <div id="update-goal-popup">
-            <label for="balance-amount">Balance (Rs.): <input type="number" id="balance-amount" readonly></label>
-            <label for="goal-name">Goal Name: <input type="text" id="goal-name"></label>
-            <label for="goal-amount">Goal Amount (Rs.): <input type="number" id="goal-amount"></label>
-            <label for="contribution-amount">Contribution (Rs.): <input type="number" id="contribution-amount"></label>
-            <div><button class="add-goal-btn" onclick="">Add</button> <button class="cancel-goal-btn" onclick="updateGoalPopupClose();">Cancel</button></div>
-        </div>
-    
+    <!-- ===== Sidebar ===== -->
     <div class="side-bar">
       <h2>Personal Budget Dashboard</h2>
       <nav>
         <ul>
-          <li>
-            <a href="../index.html" ><i class="bxr bx-currency-notes"></i> Transactions</a>
-          </li>
-          <li>
-            <a href="savings.html" id="current-tab"><i class="bxr bx-piggy-bank"></i> Savings Goals</a>
-          </li>
+          <li><a href="../index.html"><i class="bxr bx-currency-notes"></i> Transactions</a></li>
+          <li><a href="savings.html" id="current-tab"><i class="bxr bx-piggy-bank"></i> Savings Goals</a></li>
         </ul>
       </nav>
     </div>
 
+    <!-- ===== Main Section ===== -->
     <div class="main">
       <span>/ Savings Goals:</span>
-         <div class="overview-card" id="progress-overview">
-          <i class="bxr bx-future"></i>
-          <div>
-            <p>Savings:</p>
-            <div class="progress-bar-border">
-              <div class="progress-bar"><b>85%</b></div>
-            </div>
+
+      <div class="overview-card" id="progress-overview">
+        <i class="bxr bx-future"></i>
+        <div>
+          <p>Progress:</p>
+          <div class="progress-bar-border">
+            <div class="progress-bar" id="total-progress-bar"><b>0%</b></div>
           </div>
-        </div>     
-
-        <button class="new-savings-btn" onclick="newGoalPopupOpen();"> New Goal + </button>
-        <div class="goals-grid">
-
-        <div class="goals-card">
-            <div class="goals-card-header">
-                <h3>Vaccation Fund</h3>
-            </div>
-
-            <div class="goals-card-content">
-                <div class="status-bar-border">
-                    <div class="status-bar">20%</div>
-                </div>
-                <button onclick="updateGoalPopupOpen();">Contribute (+) </button>
-            </div>
         </div>
+      </div>
 
-         <div class="goals-card" id="completed-goal-card">
-            <div class="goals-card-header" id="completed-goal-header">
-                <h3>iPhone</h3>
-            </div>
+      <button class="new-savings-btn" onclick="newGoalPopupOpen();">New Goal +</button>
 
-            <div class="goals-card-content">
-                <div class="status-bar-border">
-                    <div class="status-bar" id="completed-goal-statusbar">100%</div>
-                </div>
-                <button onclick="updateGoalPopupOpen();">Contribute (+) </button>
-            </div>
-        </div>
-
-        <div class="goals-card">
-            <div class="goals-card-header">
-                <h3>House</h3>
-            </div>
-
-            <div class="goals-card-content">
-                <div class="status-bar-border">
-                    <div class="status-bar">20%</div>
-                </div>
-                <button onclick="updateGoalPopupOpen();">Contribute (+) </button>
-            </div>
-        </div>
-
-         
-
-
+      <div class="goals-grid" id="goals-grid"></div>
     </div>
 
-  <script src="../js/savings.js" >
-    
-  </script>  
+    <script src="../js/savings.js"></script>
   </body>
 </html>
