@@ -622,7 +622,8 @@ body.dark-mode .goals-card {
 
 @media (max-width:480px) {
     body {
-        grid-template-columns: 100%;
+        grid-template-columns:100%;
+        grid-template-rows:auto auto;
         box-shadow: none;
     }
 
@@ -636,7 +637,6 @@ body.dark-mode .goals-card {
 
     .side-bar {
         border-radius: 1rem 1rem 0rem 0rem;
-        height: fit-content;
     }
 
     .income-row * , .expense-row *{
