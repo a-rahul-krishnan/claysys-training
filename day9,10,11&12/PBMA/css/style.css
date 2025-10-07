@@ -633,10 +633,12 @@ body.dark-mode .goals-card {
         border-left: 1px solid rgba(220, 220, 220);
         border-top: 0;
         border-radius: 0rem 0rem 1rem 1rem;
+        height: 100%;
     }
 
     .side-bar {
         border-radius: 1rem 1rem 0rem 0rem;
+        height: fit-content;
     }
 
     .income-row * , .expense-row *{
