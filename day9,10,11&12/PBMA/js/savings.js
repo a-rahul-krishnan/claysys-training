@@ -112,7 +112,7 @@ function openContributionPopup(id) {
     <label>Goal Amount (₹):
       <input type="number" id="update-goal-amount" value="${goal.goalAmount}" readonly>
     </label>
-    <label>Balance Amount (₹):
+    <label>Balance (₹):
       <input type="number" id="update-balance-amount" value="${goal.goalAmount - goal.contributed}" readonly>
     </label>
     <label>Contribution (₹):
