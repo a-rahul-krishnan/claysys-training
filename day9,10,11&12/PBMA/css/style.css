@@ -197,6 +197,10 @@ nav ul {
     padding: 0.5rem;
     box-shadow: 0.5rem 0.5rem 0.2rem rgba(220, 220, 220);
     max-height: 200px;
+}
+
+.list-items{
+    max-height: 150px;
     overflow-y: auto;
 }
 
