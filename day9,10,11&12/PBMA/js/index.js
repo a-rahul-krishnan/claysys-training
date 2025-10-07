@@ -1,4 +1,4 @@
-// ====== Chart Initialization ======
+//  Chart Initialization 
 const categoryCtx = document.getElementById("categoryChart");
 let expenseChart = new Chart(categoryCtx, {
   type: "doughnut",
@@ -30,13 +30,13 @@ let expenseChart = new Chart(categoryCtx, {
   },
 });
 
-// ====== DOM Elements ======
+//  DOM Elements 
 const addBtn = document.querySelector(".add-transaction-btn");
 const list = document.querySelector(".list-items");
 
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
-// ====== Render Transactions ======
+//  Render Transactions 
 function renderTransactions() {
   list.innerHTML = "";
 
@@ -63,7 +63,7 @@ function renderTransactions() {
   });
 }
 
-// ====== Add Transaction ======
+//  Add Transaction 
 addBtn.addEventListener("click", () => {
   const type = document.querySelector("input[name='transaction-type']:checked");
   const amount = document.getElementById("amount").value;
@@ -95,7 +95,7 @@ addBtn.addEventListener("click", () => {
   document.querySelector("input[name='transaction-type']:checked").checked = false;
 });
 
-// ====== Delete Transaction ======
+//  Delete Transaction 
 list.addEventListener("click", (e) => {
   if (e.target.closest(".delete-btn")) {
     const id = e.target.closest(".delete-btn").dataset.id;
@@ -107,7 +107,7 @@ list.addEventListener("click", (e) => {
   }
 });
 
-// ====== Edit Transaction ======
+//  Edit Transaction 
 list.addEventListener("click", (e) => {
   if (e.target.closest(".edit-btn")) {
     const id = e.target.closest(".edit-btn").dataset.id;
@@ -128,7 +128,7 @@ list.addEventListener("click", (e) => {
   }
 });
 
-// ====== Update Overview ======
+//  Update Overview 
 function updateOverview() {
   const income = transactions
     .filter((t) => t.type === "income")
@@ -145,7 +145,7 @@ function updateOverview() {
   document.querySelector("#remaining-overview-card b").textContent = `${remaining}₹`;
 }
 
-// ====== Update Expense Chart ======
+//  Update Expense Chart 
 function updateExpenseChart() {
   const expenses = transactions.filter((t) => t.type === "expense");
   const categoryTotals = {};
@@ -171,7 +171,7 @@ function updateSavingsProgress() {
 }
 
 
-// ====== Initial Render ======
+//  Initial Render 
 renderTransactions();
 updateOverview();
 updateExpenseChart();

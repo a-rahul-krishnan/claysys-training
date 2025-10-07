@@ -1,4 +1,3 @@
-// ===== POPUP Controls =====
 function newGoalPopupOpen() {
   document.getElementById("new-goal-popup").style.display = "block";
 }
@@ -17,15 +16,15 @@ function resetGoals(){
   renderGoals();
   updateTotalProgress();
 }
-// ===== Local Storage Setup =====
+// Local Storage 
 let goals = JSON.parse(localStorage.getItem("goals")) || [];
 let currentUpdateId = null;
 
-// ===== DOM Elements =====
+// DOM Elements
 const goalsGrid = document.getElementById("goals-grid");
 const addGoalBtn = document.getElementById("add-goal-btn");
 
-// ===== Add New Goal =====
+// Add New Goal
 addGoalBtn.addEventListener("click", () => {
   const name = document.getElementById("goal-name").value.trim();
   const goalAmount = parseFloat(document.getElementById("goal-amount").value);
@@ -62,7 +61,7 @@ addGoalBtn.addEventListener("click", () => {
   document.getElementById("contribution-amount").value = "";
 });
 
-// ===== Render Goals =====
+// Render Goals 
 function renderGoals() {
   goalsGrid.innerHTML = "";
 
@@ -95,7 +94,7 @@ function renderGoals() {
   });
 }
 
-// ===== Open Contribution Popup =====
+// Open Contribution Popup
 function openContributionPopup(id) {
   currentUpdateId = id;
   const goal = goals.find(g => g.id === id);
@@ -156,7 +155,7 @@ function openContributionPopup(id) {
   });
 }
 
-// ===== Toast Notification =====
+// Toast Notification 
 function showToast(message) {
   const toast = document.createElement("div");
   toast.classList.add("toast");
@@ -166,7 +165,7 @@ function showToast(message) {
   setTimeout(() => toast.remove(), 3000);
 }
 
-// ===== Total Progress =====
+//  Total Progress 
 function updateTotalProgress() {
   if (goals.length === 0) {
     document.getElementById("total-progress-bar").style.width = "0%";
@@ -185,6 +184,6 @@ function updateTotalProgress() {
   localStorage.setItem("savingsProgress", JSON.stringify({progress, totalSaved, totalTarget}));
 }
 
-// ===== Initial Load =====
+// Initial Load 
 renderGoals();
 updateTotalProgress();

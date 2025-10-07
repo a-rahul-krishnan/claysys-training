@@ -1,4 +1,4 @@
-// ===== Export Transactions as CSV =====
+//  Export Transactions as CSV 
 document.getElementById("export-btn").addEventListener("click", () => {
   const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
@@ -24,7 +24,7 @@ document.getElementById("export-btn").addEventListener("click", () => {
   URL.revokeObjectURL(url);
 });
 
-// ===== Import Transactions from CSV (Clears old data) =====
+//  Import Transactions from CSV 
 document.getElementById("import-btn").addEventListener("click", () => {
   const fileInput = document.getElementById("import-file");
   const file = fileInput.files[0];
