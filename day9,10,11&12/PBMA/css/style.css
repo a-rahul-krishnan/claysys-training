@@ -623,7 +623,7 @@ body.dark-mode .goals-card {
 @media (max-width:480px) {
     body {
         grid-template-columns:100%;
-        grid-template-rows:auto auto;
+        grid-template-rows:min-content auto;
         box-shadow: none;
     }
 
