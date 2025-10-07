@@ -17,6 +17,7 @@
         <li><a href="data.html" id="current-tab"><i class="bxr bx-form"></i> Export/Import</a></li>
       </ul>
     </nav>
+    
     <div style="margin-top:1rem;">
       <span style="margin-left:10px;">Dark Mode</span>
       <label class="switch">
@@ -27,19 +28,30 @@
   </div>
 
   <div class="main">
-    <span>/ Export / Import:</span>
+    <span>/ Export (or) Import:</span>
 
-    <div class="export-import-section">
-      <h3>Export Data</h3>
+    <div class="export-import-section fade-up">
+      <h3>Export Data:</h3>
       <button id="export-btn" class="new-savings-btn">Export Transactions (CSV)</button>
 
-      <h3 style="margin-top:1rem;">Import Data</h3>
+      <h3 style="margin-top:1rem;">Import Data: </h3>
       <input type="file" id="import-file" accept=".csv" />
-      <button id="import-btn" class="add-goal-btn">Import Transactions</button>
+      <button id="import-btn" class="add-goal-btn">Import Transactions (CSV)</button>
     </div>
   </div>
 
   <script src="../js/data.js"></script>
   <script src="../js/darkmode.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+    const fadeElements = document.querySelectorAll(".fade-up");
+    fadeElements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add("show");
+      }, index * 50);
+    });
+    });
+  </script>
+
 </body>
 </html>

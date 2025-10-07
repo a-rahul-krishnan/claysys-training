@@ -548,8 +548,21 @@ body.dark-mode .goals-card {
   transform: translateX(26px);
 }
 
+/* ===== Page Load Fade + Move Animation ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
+.progress-bar{
+    transition: ease 300ms;
+}
 
 @media (max-width:768px) {
     body {

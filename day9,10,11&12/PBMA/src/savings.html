@@ -16,10 +16,10 @@
       <label for="goal-name">Goal Name:
         <input type="text" id="goal-name" />
       </label>
-      <label for="goal-amount">Goal Amount (Rs.):
+      <label for="goal-amount">Goal Amount (₹):
         <input type="number" id="goal-amount" />
       </label>
-      <label for="contribution-amount">Contribution (Rs.):
+      <label for="contribution-amount">Contribution (₹):
         <input type="number" id="contribution-amount" />
       </label>
       <div>
@@ -56,7 +56,7 @@
     <div class="main">
       <span>/ Savings Goals:</span>
 
-      <div class="overview-card" id="progress-overview">
+      <div class="overview-card fade-up" id="progress-overview">
         <i class="bxr bx-future"></i>
         <div>
           <p>Progress:</p>
@@ -66,12 +66,23 @@
         </div>
       </div>
 
-      <button class="new-savings-btn" onclick="newGoalPopupOpen();">New Goal +</button>
+      <button class="new-savings-btn fade-up" onclick="newGoalPopupOpen();">New Goal +</button>
 
-      <div class="goals-grid" id="goals-grid"></div>
+      <div class="goals-grid fade-up" id="goals-grid"></div>
     </div>
 
     <script src="../js/savings.js"></script>
     <script src="../js/darkmode.js"></script>
+    <script>
+    window.addEventListener("load", () => {
+    const fadeElements = document.querySelectorAll(".fade-up");
+    fadeElements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add("show");
+      }, index * 50);
+    });
+    });
+    </script>
+
   </body>
 </html>

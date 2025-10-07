@@ -31,6 +31,12 @@ addGoalBtn.addEventListener("click", () => {
     return;
   }
 
+  // Validate contribution does not exceed goal amount
+  if (contribution > goalAmount) {
+    alert("Contribution cannot exceed goal amount. Please enter a valid amount.");
+    return;
+  }
+
   const newGoal = {
     id: Date.now(),
     name,
@@ -71,7 +77,7 @@ function renderGoals() {
         <div class="status-bar-border">
           <div class="status-bar" style="width: ${progress}%;">${progress}%</div>
         </div>
-        <p>Rs. ${goal.contributed} / Rs. ${goal.goalAmount}</p>
+        <p>${goal.contributed}₹ / ${goal.goalAmount}₹</p>
         ${
           progress < 100
             ? `<button onclick="openContributionPopup(${goal.id})">Contribute (+)</button>`
@@ -93,15 +99,15 @@ function openContributionPopup(id) {
   const popup = document.getElementById("update-goal-popup");
   popup.innerHTML = `
     <label>Goal Name:
-      <input type="text" id="update-goal-name" value="${goal.name}" >
+      <input type="text" id="update-goal-name" value="${goal.name}" readonly>
     </label>
-    <label>Goal Amount (Rs.):
-      <input type="number" id="update-goal-amount" value="${goal.goalAmount}" >
+    <label>Goal Amount (₹):
+      <input type="number" id="update-goal-amount" value="${goal.goalAmount}" readonly>
     </label>
-    <label>Balance Amount (Rs.):
+    <label>Balance Amount (₹):
       <input type="number" id="update-balance-amount" value="${goal.goalAmount - goal.contributed}" readonly>
     </label>
-    <label>Contribution (Rs.):
+    <label>Contribution (₹):
       <input type="number" id="update-contribution-amount">
     </label>
     <div>
@@ -115,6 +121,15 @@ function openContributionPopup(id) {
     const amount = parseFloat(document.getElementById("update-contribution-amount").value);
     if (isNaN(amount) || amount <= 0) {
       alert("Enter valid contribution");
+      return;
+    }
+
+    const goal = goals.find(g => g.id === currentUpdateId);
+    const remaining = goal.goalAmount - goal.contributed;
+
+    // Validate contribution does not exceed remaining balance
+    if (amount > remaining) {
+      alert(`Contribution exceeds remaining goal balance (${remaining}₹). Please enter a valid amount.`);
       return;
     }
 

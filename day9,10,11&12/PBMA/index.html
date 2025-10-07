@@ -37,7 +37,7 @@
 
     <div class="main">
       <span>/ Transaction :</span>
-      <div class="overview">
+      <div class="overview fade-up">
         <div class="overview-card" id="income-overview-card">
           <i class="bxr bx-plus-circle"></i>
           <div>
@@ -75,7 +75,7 @@
 
       <div class="main-section">
         <div class="transaction-section">
-          <div class="add-transaction-section">
+          <div class="add-transaction-section fade-up">
             <h3>Add Transaction:</h3>
 
             <label><b>Transaction Type:</b>
@@ -98,7 +98,7 @@
               </div>
             </label>
             <label for="amount"
-              ><b>Amount:</b><input type="number" id="amount" name="amount" placeholder="Enter Amount"
+              ><b>Amount (₹):</b><input type="number" id="amount" name="amount" placeholder="Enter Amount"
             /></label>
             <label for="category"><b>Category:</b>
               <select name="category" id="category">
@@ -117,7 +117,7 @@
             <label for="date"><b>Date:</b><input type="date" id="date" placeholder="Select Date"/></label>
             <button class="add-transaction-btn">Add Transaction</button>
           </div>
-          <div class="add-section-list">
+          <div class="add-section-list fade-up">
             <h3>Transactions:</h3>
 
             <div class="list-items">
@@ -125,7 +125,7 @@
             </div>
           </div>
         </div>
-        <div class="graph-section">
+        <div class="graph-section fade-up">
           <h3>Expense Categorization:</h3>
           <canvas id="categoryChart" style="width: 100%; max-width: 400px"></canvas>
         </div>
@@ -133,5 +133,16 @@
     </div>
     <script src="js/index.js"></script>
     <script src="js/darkmode.js"></script>
+    <script>
+    window.addEventListener("load", () => {
+    const fadeElements = document.querySelectorAll(".fade-up");
+    fadeElements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add("show");
+      }, index * 50);
+    });
+    });
+    </script>
+
   </body>
 </html>

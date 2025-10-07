@@ -53,7 +53,7 @@ function renderTransactions() {
       </div>
       <p>${t.category}</p>
       <div>
-        Rs.${t.amount}
+        ${t.amount}₹
         <button class="edit-btn" data-id="${t.id}"><i class="bxr bx-edit"></i></button>
         <button class="delete-btn" data-id="${t.id}"><i class="bxr bx-trash-x"></i></button>
       </div>
@@ -140,9 +140,9 @@ function updateOverview() {
 
   const remaining = income - expense;
 
-  document.querySelector("#income-overview-card b").textContent = `Rs.${income}`;
-  document.querySelector("#expense-overview-card b").textContent = `Rs.${expense}`;
-  document.querySelector("#remaining-overview-card b").textContent = `Rs.${remaining}`;
+  document.querySelector("#income-overview-card b").textContent = `${income}₹`;
+  document.querySelector("#expense-overview-card b").textContent = `${expense}₹`;
+  document.querySelector("#remaining-overview-card b").textContent = `${remaining}₹`;
 }
 
 // ====== Update Expense Chart ======
