@@ -269,12 +269,13 @@ nav ul {
 }
 
 
+
+
 .new-savings-btn {
     font-size: 0.8rem;
     padding: 0.5rem;
     background-color: cornflowerblue;
     color: white;
-    display: block;
     font-weight: bold;
     border-radius: 0.3rem;
     border: 2px solid cornflowerblue;
@@ -291,6 +292,32 @@ nav ul {
     color: black;
     background-color: cornflowerblue;
 }
+
+
+
+
+.reset-savings-btn {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    background-color: crimson;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    border: 2px solid crimson;
+    margin: 0.5rem;
+    transition: ease 200ms;
+}
+
+.reset-savings-btn:hover {
+    background-color: transparent;
+    color: crimson;
+}
+
+.reset-savings-btn:active {
+    color: black;
+    background-color: crimson;
+}
+
 
 .add-goal-btn {
     font-size: 0.8rem;

@@ -11,7 +11,12 @@ function updateGoalPopupOpen() {
 function updateGoalPopupClose() {
   document.getElementById("update-goal-popup").style.display = "none";
 }
-
+function resetGoals(){
+  localStorage.clear();
+  goals=[];
+  renderGoals();
+  updateTotalProgress();
+}
 // ===== Local Storage Setup =====
 let goals = JSON.parse(localStorage.getItem("goals")) || [];
 let currentUpdateId = null;
