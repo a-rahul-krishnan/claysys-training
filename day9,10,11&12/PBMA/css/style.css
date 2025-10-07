@@ -636,6 +636,7 @@ body.dark-mode .goals-card {
 
     .side-bar {
         border-radius: 1rem 1rem 0rem 0rem;
+        height: fit-content;
     }
 
     .income-row * , .expense-row *{
