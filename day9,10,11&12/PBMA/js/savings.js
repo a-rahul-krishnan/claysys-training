@@ -55,6 +55,10 @@ addGoalBtn.addEventListener("click", () => {
   updateTotalProgress();
   newGoalPopupClose();
 
+  if (contribution === goalAmount) {
+    showToast(`🎉 Goal "${name}" Completed!`);
+  }
+
   // Clear inputs
   document.getElementById("goal-name").value = "";
   document.getElementById("goal-amount").value = "";
@@ -70,7 +74,7 @@ function renderGoals() {
 
     const card = document.createElement("div");
     card.classList.add("goals-card");
-    if (progress >= 100) card.classList.add("completed");
+    if (progress == 100) card.classList.add("completed");
 
     card.innerHTML = `
       <div class="goals-card-header">
