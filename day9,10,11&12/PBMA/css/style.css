@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 b,
@@ -54,7 +54,6 @@ nav a:active {
     background-color: white;
     color: coral;
 }
-
 
 #current-tab {
     background-color: white;
@@ -131,8 +130,8 @@ nav ul {
     background-color: cornflowerblue;
 }
 
-#progress-overview{
-    width:fit-content;
+#progress-overview {
+    width: fit-content;
 }
 
 .progress-bar-border {
@@ -199,12 +198,10 @@ nav ul {
     max-height: 200px;
 }
 
-.list-items{
+.list-items {
     max-height: 150px;
     overflow-y: auto;
 }
-
-
 
 .edit-btn {
     background-color: cornflowerblue;
@@ -220,7 +217,8 @@ nav ul {
     transition: ease 200ms;
 }
 
-.edit-btn i, .delete-btn i {
+.edit-btn i,
+.delete-btn i {
     font-size: 1.2rem;
 }
 
@@ -228,7 +226,6 @@ nav ul {
 .add-section-list button:hover {
     color: white;
     cursor: pointer;
-
 }
 
 .add-section-list button:active {
@@ -255,7 +252,6 @@ nav ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .graph-section {
@@ -268,13 +264,10 @@ nav ul {
     margin-left: 1rem;
 }
 
-.row-info-1{
+.row-info-1 {
     display: flex;
     align-items: center;
 }
-
-
-
 
 .new-savings-btn {
     font-size: 0.8rem;
@@ -297,9 +290,6 @@ nav ul {
     color: black;
     background-color: cornflowerblue;
 }
-
-
-
 
 .reset-savings-btn {
     font-size: 0.8rem;
@@ -375,12 +365,12 @@ nav ul {
     background-color: white;
     padding: 0.5rem;
     position: fixed;
-    justify-items:end;
+    justify-items: end;
     top: 50%;
     left: 50%;
     z-index: 10;
     transform: translate(-50%, -50%);
-    display:none;
+    display: none;
 }
 
 #update-goal-popup {
@@ -390,64 +380,62 @@ nav ul {
     background-color: white;
     padding: 0.5rem;
     position: fixed;
-    justify-items:end;
+    justify-items: end;
     top: 50%;
     left: 50%;
     z-index: 10;
     transform: translate(-50%, -50%);
-    display:none;
+    display: none;
 }
 
-.goals-grid{
+.goals-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;    
-    border-radius:1rem ;
+    gap: 1rem;
+    border-radius: 1rem;
     border: 1px solid rgba(220, 220, 220);
     padding: 1rem;
     height: 23rem;
     overflow-y: auto;
 }
 
-.goals-card{
+.goals-card {
     border: 1px solid rgba(220, 220, 220);
     border-radius: 0.3rem;
     height: 15rem;
     box-shadow: 0.3rem 0.3rem 0.3rem rgba(220, 220, 220);
 }
 
-.goals-card-header{
-    border-bottom:1px solid rgba(220, 220, 220) ;
+.goals-card-header {
+    border-bottom: 1px solid rgba(220, 220, 220);
     height: 7rem;
     background-color: gold;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0.2rem 0.2rem 0rem 0rem;
-
 }
 
-.goals-card-header h3{
+.goals-card-header h3 {
     margin: 0;
     color: white;
 }
 
-.status-bar-border{
+.status-bar-border {
     border: 1px solid black;
     width: 80%;
     margin: 1rem;
-
 }
 
-.status-bar{
+.status-bar {
     background-color: cornflowerblue;
 }
 
-.goals-card-content{
+.goals-card-content {
     justify-items: center;
 }
 
-.goals-card-content button{
+.goals-card-content button {
     margin: 1rem;
     display: block;
     color: white;
@@ -458,148 +446,144 @@ nav ul {
     transition: ease 200ms;
 }
 
-.goals-card-content button:hover{
+.goals-card-content button:hover {
     background-color: transparent;
     color: yellowgreen;
 }
 
-.goals-card-content button:active{
+.goals-card-content button:active {
     background-color: yellowgreen;
     color: black;
 
 }
 
 .toast {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  background-color: yellowgreen;
-  color: white;
-  padding: 0.8rem 1rem;
-  border-radius: 0.4rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  z-index: 1000;
-}
-.toast.show {
-  opacity: 1;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background-color: yellowgreen;
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
 }
 
+.toast.show {
+    opacity: 1;
+}
 
 .completed .goals-card-header {
-    background-color: green ;
+    background-color: green;
 }
+
 .completed .status-bar {
-    background-color: green ;
-    width: 100% ;
+    background-color: green;
+    width: 100%;
     color: white;
 }
 
-
 /* Dark Mode */
 body.dark-mode {
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
 }
 
 body.dark-mode .main {
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
 }
 
 body.dark-mode .overview {
     background-color: #222;
-    color: black  ; 
+    color: black;
 }
 
 body.dark-mode .overview-card {
-    color: black  ; 
+    color: black;
 }
 
 body.dark-mode #new-goal-popup,
 body.dark-mode #update-goal-popup {
-  background-color: #222;
-  color: white;
+    background-color: #222;
+    color: white;
 }
 
-body.dark-mode .status-bar-border{
+body.dark-mode .status-bar-border {
     border: 1px solid white;
 }
-
-
 
 body.dark-mode .add-transaction-section,
 body.dark-mode .add-section-list,
 body.dark-mode .graph-section,
 body.dark-mode .goals-card {
-  background-color: #000;
-  color: white;
-  border-color: #333;
-  box-shadow: 0.5rem 0.5rem 0.2rem rgba(50,50,50,0.5);
+    background-color: #000;
+    color: white;
+    border-color: #333;
+    box-shadow: 0.5rem 0.5rem 0.2rem rgba(50, 50, 50, 0.5);
 }
-
 
 /* ===== Dark Mode Switch ===== */
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 24px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
 }
 
-/* Checked state */
-.switch input:checked + .slider {
-  background-color: #2196F3; 
+.switch input:checked+.slider {
+    background-color: #2196F3;
 }
 
-.switch input:checked + .slider:before {
-  transform: translateX(26px);
+.switch input:checked+.slider:before {
+    transform: translateX(26px);
 }
 
-/* ===== Page Load Fade + Move Animation ===== */
+/* Page Load Fade + Move Animation */
 .fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.progress-bar{
+.progress-bar {
     transition: ease 300ms;
 }
 
@@ -616,17 +600,17 @@ body.dark-mode .goals-card {
         margin: 1rem 0px 0px 0px;
     }
 
-    .goals-grid{
+    .goals-grid {
         grid-template-columns: 1fr 1fr;
-        gap:1rem;
+        gap: 1rem;
     }
 
 }
 
 @media (max-width:480px) {
     body {
-        grid-template-columns:100%;
-        grid-template-rows:min-content auto;
+        grid-template-columns: 100%;
+        grid-template-rows: min-content auto;
         box-shadow: none;
     }
 
@@ -644,11 +628,13 @@ body.dark-mode .goals-card {
         height: fit-content;
     }
 
-    .income-row * , .expense-row *{
+    .income-row *,
+    .expense-row * {
         font-size: 1rem;
     }
-        
-    .delete-btn i, .edit-btn i {
+
+    .delete-btn i,
+    .edit-btn i {
         font-size: 1rem;
     }
 
@@ -658,15 +644,12 @@ body.dark-mode .goals-card {
 
     .income-row,
     .expense-row {
-        min-width: 325px; 
+        min-width: 325px;
     }
 
-    .goals-grid{
+    .goals-grid {
         grid-template-columns: 1fr;
-        gap:1rem;
+        gap: 1rem;
     }
-
 
 }
-
-
