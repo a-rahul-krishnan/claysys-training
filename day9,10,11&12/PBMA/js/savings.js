@@ -56,7 +56,7 @@ addGoalBtn.addEventListener("click", () => {
   newGoalPopupClose();
 
   if (contribution === goalAmount) {
-    showToast(`🎉 Goal "${name}" Completed!`);
+    showToast(`Congratulations! You've achieved your "${name}"!`);
      const lastCard = goalsGrid.lastElementChild; // newly added card
      launchConfettiOnCard(lastCard);
   }
@@ -148,7 +148,7 @@ function openContributionPopup(id) {
         g.contributed += amount;
         if (g.contributed >= g.goalAmount) {
           g.contributed = g.goalAmount;
-          showToast(`🎉 Goal "${g.name}" Completed!`);
+          showToast(`Congratulations! You've achieved your "${g.name}"!`);
           // Find that goal’s card in the grid
           const goalCards = document.querySelectorAll(".goals-card");
           const completedCard = Array.from(goalCards).find(card => 
