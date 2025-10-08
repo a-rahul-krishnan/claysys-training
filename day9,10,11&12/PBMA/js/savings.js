@@ -69,7 +69,7 @@ addGoalBtn.addEventListener("click", () => {
 
 // Render Goals 
 function renderGoals() {
-  goalsGrid.innerHTML = "<h3>Goals:</h3>";
+  goalsGrid.innerHTML = "";
 
   goals.forEach((goal) => {
     const progress = Math.min(Math.round((goal.contributed / goal.goalAmount) * 100), 100);
