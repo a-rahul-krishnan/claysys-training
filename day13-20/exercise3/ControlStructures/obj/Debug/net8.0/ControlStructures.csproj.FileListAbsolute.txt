@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\bin\Debug\net8.0\ControlStructures.exe
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\bin\Debug\net8.0\ControlStructures.deps.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\bin\Debug\net8.0\ControlStructures.runtimeconfig.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\bin\Debug\net8.0\ControlStructures.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\bin\Debug\net8.0\ControlStructures.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\obj\Debug\net8.0\ControlStructures.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\obj\Debug\net8.0\ControlStructures.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\obj\Debug\net8.0\ControlStructures.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\obj\Debug\net8.0\ControlStructures.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\obj\Debug\net8.0\ControlStructures.sourcelink.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\obj\Debug\net8.0\ControlStructures.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\obj\Debug\net8.0\refint\ControlStructures.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\obj\Debug\net8.0\ControlStructures.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\obj\Debug\net8.0\ControlStructures.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise3\ControlStructures\obj\Debug\net8.0\ref\ControlStructures.dll
