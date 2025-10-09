@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day13-20\\exercise2\\BasicSyntax\u0026DataTypesApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8DEE1722-0AA4-4E59-A4BC-1FE50D2C1342}|BasicSyntax\u0026DataTypesApp.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day13-20\\exercise2\\basicsyntax\u0026datatypesapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DEE1722-0AA4-4E59-A4BC-1FE50D2C1342}|BasicSyntax\u0026DataTypesApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day13-20\\exercise2\\BasicSyntax\u0026DataTypesApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day13-20\\exercise2\\BasicSyntax\u0026DataTypesApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T11:09:28.073Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

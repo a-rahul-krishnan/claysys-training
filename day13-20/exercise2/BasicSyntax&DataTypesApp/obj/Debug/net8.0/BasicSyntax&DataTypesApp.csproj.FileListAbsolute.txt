@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\bin\Debug\net8.0\BasicSyntax&DataTypesApp.exe
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\bin\Debug\net8.0\BasicSyntax&DataTypesApp.deps.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\bin\Debug\net8.0\BasicSyntax&DataTypesApp.runtimeconfig.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\bin\Debug\net8.0\BasicSyntax&DataTypesApp.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\bin\Debug\net8.0\BasicSyntax&DataTypesApp.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\obj\Debug\net8.0\BasicSyntax&DataTypesApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\obj\Debug\net8.0\BasicSyntax&DataTypesApp.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\obj\Debug\net8.0\BasicSyntax&DataTypesApp.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\obj\Debug\net8.0\BasicSyntax&DataTypesApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\obj\Debug\net8.0\BasicSyntax&DataTypesApp.sourcelink.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\obj\Debug\net8.0\BasicSyntax&DataTypesApp.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\obj\Debug\net8.0\refint\BasicSyntax&DataTypesApp.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\obj\Debug\net8.0\BasicSyntax&DataTypesApp.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\obj\Debug\net8.0\BasicSyntax&DataTypesApp.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise2\BasicSyntax&DataTypesApp\obj\Debug\net8.0\ref\BasicSyntax&DataTypesApp.dll
