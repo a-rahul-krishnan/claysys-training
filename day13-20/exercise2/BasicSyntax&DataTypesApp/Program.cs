@@ -53,13 +53,26 @@ Console.WriteLine("Division : " + age + " / 5 = " + (age / 5));
 Console.WriteLine("Remainder : " + age + " % 4 = " + (age % 4));
 
 
-// (III) Basic Conditional Statement :
-Console.WriteLine("\n\nBasic Conditional Statement Example in C#:\n");
+// (III) Basic Operators in C# :
+Console.WriteLine("\n\nBasic Comparison Operators Example in C#:\n");
 Console.WriteLine("Age:"+age);
 Console.Write("Voting Elegibility : ");
 if (age >= 18) {
     Console.Write("Yes\n");
 }
 else {
+    Console.Write("No\n");
+}
+
+Console.WriteLine("\n\nBasic Logical Operators Example in C#:\n");
+Console.WriteLine("Age:" + age);
+Console.WriteLine("Is Student:" + isStudent);
+Console.Write("Offer Eligibility : ");
+if (age >= 18 && isStudent)
+{
+    Console.Write("Yes\n");
+}
+else
+{
     Console.Write("No\n");
 }
