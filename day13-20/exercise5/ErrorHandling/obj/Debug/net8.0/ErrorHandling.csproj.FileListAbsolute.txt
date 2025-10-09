@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\bin\Debug\net8.0\ErrorHandling.exe
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\bin\Debug\net8.0\ErrorHandling.deps.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\bin\Debug\net8.0\ErrorHandling.runtimeconfig.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\bin\Debug\net8.0\ErrorHandling.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\bin\Debug\net8.0\ErrorHandling.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\obj\Debug\net8.0\ErrorHandling.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\obj\Debug\net8.0\ErrorHandling.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\obj\Debug\net8.0\ErrorHandling.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\obj\Debug\net8.0\ErrorHandling.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\obj\Debug\net8.0\ErrorHandling.sourcelink.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\obj\Debug\net8.0\ErrorHandling.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\obj\Debug\net8.0\refint\ErrorHandling.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\obj\Debug\net8.0\ErrorHandling.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\obj\Debug\net8.0\ErrorHandling.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise5\ErrorHandling\obj\Debug\net8.0\ref\ErrorHandling.dll

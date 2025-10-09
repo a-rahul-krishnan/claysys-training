@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\bin\Debug\net8.0\ECommerceApp.exe
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\bin\Debug\net8.0\ECommerceApp.deps.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\bin\Debug\net8.0\ECommerceApp.runtimeconfig.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\bin\Debug\net8.0\ECommerceApp.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\bin\Debug\net8.0\ECommerceApp.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\obj\Debug\net8.0\ECommerceApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\obj\Debug\net8.0\ECommerceApp.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\obj\Debug\net8.0\ECommerceApp.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\obj\Debug\net8.0\ECommerceApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\obj\Debug\net8.0\ECommerceApp.sourcelink.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\obj\Debug\net8.0\ECommerceApp.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\obj\Debug\net8.0\refint\ECommerceApp.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\obj\Debug\net8.0\ECommerceApp.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\obj\Debug\net8.0\ECommerceApp.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise4\ECommerceApp\obj\Debug\net8.0\ref\ECommerceApp.dll
