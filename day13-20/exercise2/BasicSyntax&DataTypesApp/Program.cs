@@ -1,6 +1,6 @@
 ﻿/*
 Basic Synatx 
-    and 
+    and
 Data Types in C#
  */
 
