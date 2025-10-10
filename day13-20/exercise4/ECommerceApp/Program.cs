@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// ---------- MAIN PROGRAM (Top-Level) ----------
 List<Product> products = new List<Product>()
 {
     new Product { Id = 1, Name = "Laptop", Price = 55000, Stock = 5 },
@@ -15,7 +14,7 @@ bool running = true;
 
 while (running)
 {
-    Console.WriteLine("\n=== E-Commerce App ===");
+    Console.WriteLine("\nE-Commerce App :");
     Console.WriteLine("1. View Products");
     Console.WriteLine("2. Add to Cart");
     Console.WriteLine("3. View Cart");
@@ -73,7 +72,7 @@ while (running)
             break;
 
         case "0":
-            running = false; // exit only when 0 pressed
+            running = false; 
             break;
 
         default:
@@ -84,7 +83,6 @@ while (running)
 
 Console.WriteLine("\nProgram exited successfully!");
 
-// ---------- CLASSES BELOW ----------
 
 class Product
 {
@@ -179,6 +177,6 @@ class ShoppingCart
 
         DisplayCart();
         Console.WriteLine("Checking out... Thank you for shopping!");
-        cart.Clear(); // items purchased — no stock restore
+        cart.Clear(); 
     }
 }
