@@ -11,7 +11,7 @@ function updateGoalPopupClose() {
   document.getElementById("update-goal-popup").style.display = "none";
 }
 function resetGoals(){
-  localStorage.clear();
+  localStorage.goals=[];
   goals=[];
   renderGoals();
   updateTotalProgress();
