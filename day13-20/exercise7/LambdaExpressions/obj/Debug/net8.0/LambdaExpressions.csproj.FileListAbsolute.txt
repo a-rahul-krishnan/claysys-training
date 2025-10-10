@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\bin\Debug\net8.0\LambdaExpressions.exe
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\bin\Debug\net8.0\LambdaExpressions.deps.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\bin\Debug\net8.0\LambdaExpressions.runtimeconfig.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\bin\Debug\net8.0\LambdaExpressions.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\bin\Debug\net8.0\LambdaExpressions.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\obj\Debug\net8.0\LambdaExpressions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\obj\Debug\net8.0\LambdaExpressions.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\obj\Debug\net8.0\LambdaExpressions.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\obj\Debug\net8.0\LambdaExpressions.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\obj\Debug\net8.0\LambdaExpressions.sourcelink.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\obj\Debug\net8.0\LambdaExpressions.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\obj\Debug\net8.0\refint\LambdaExpressions.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\obj\Debug\net8.0\LambdaExpressions.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\obj\Debug\net8.0\LambdaExpressions.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LambdaExpressions\obj\Debug\net8.0\ref\LambdaExpressions.dll
