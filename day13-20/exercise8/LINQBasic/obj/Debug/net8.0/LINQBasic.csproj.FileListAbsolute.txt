@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\bin\Debug\net8.0\LINQBasic.exe
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\bin\Debug\net8.0\LINQBasic.deps.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\bin\Debug\net8.0\LINQBasic.runtimeconfig.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\bin\Debug\net8.0\LINQBasic.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\bin\Debug\net8.0\LINQBasic.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\obj\Debug\net8.0\LINQBasic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\obj\Debug\net8.0\LINQBasic.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\obj\Debug\net8.0\LINQBasic.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\obj\Debug\net8.0\LINQBasic.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\obj\Debug\net8.0\LINQBasic.sourcelink.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\obj\Debug\net8.0\LINQBasic.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\obj\Debug\net8.0\refint\LINQBasic.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\obj\Debug\net8.0\LINQBasic.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\obj\Debug\net8.0\LINQBasic.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise7\LINQBasic\obj\Debug\net8.0\ref\LINQBasic.dll

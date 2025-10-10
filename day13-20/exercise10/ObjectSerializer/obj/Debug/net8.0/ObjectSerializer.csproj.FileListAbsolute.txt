@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\bin\Debug\net8.0\ObjectSerializer.exe
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\bin\Debug\net8.0\ObjectSerializer.deps.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\bin\Debug\net8.0\ObjectSerializer.runtimeconfig.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\bin\Debug\net8.0\ObjectSerializer.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\bin\Debug\net8.0\ObjectSerializer.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\obj\Debug\net8.0\ObjectSerializer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\obj\Debug\net8.0\ObjectSerializer.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\obj\Debug\net8.0\ObjectSerializer.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\obj\Debug\net8.0\ObjectSerializer.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\obj\Debug\net8.0\ObjectSerializer.sourcelink.json
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\obj\Debug\net8.0\ObjectSerializer.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\obj\Debug\net8.0\refint\ObjectSerializer.dll
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\obj\Debug\net8.0\ObjectSerializer.pdb
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\obj\Debug\net8.0\ObjectSerializer.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\claysys-training\day13-20\exercise10\ObjectSerializer\obj\Debug\net8.0\ref\ObjectSerializer.dll

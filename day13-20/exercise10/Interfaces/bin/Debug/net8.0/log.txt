@@ -1,0 +1,3 @@
+10/10/2025 10:16:13 AM [INFO] Service started.
+10/10/2025 10:16:13 AM [WARNING] This is a warning.
+10/10/2025 10:16:13 AM [ERROR] An error occurred.
