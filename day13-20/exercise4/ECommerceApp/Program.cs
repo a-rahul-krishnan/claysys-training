@@ -164,7 +164,7 @@ class ShoppingCart
             Console.WriteLine($"{Product.Name} x{Quantity} - ₹{Product.Price * Quantity}");
             total += Product.Price * Quantity;
         }
-        Console.WriteLine($"Total: ₹{total}");
+        Console.WriteLine($"Total: Rs.{total}");
     }
 
     public void Checkout()

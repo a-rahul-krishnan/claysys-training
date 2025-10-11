@@ -1,7 +1,4 @@
-﻿using System;
-using System.Timers;
-
-Console.WriteLine("Events Example:");
+﻿Console.WriteLine("Events Example:");
 Clock clock = new Clock();
 Display display = new Display(clock);
 clock.Start();
@@ -9,7 +6,6 @@ Console.WriteLine("Clock started. Press any key to stop after a few seconds...")
 Console.ReadKey();
 clock.Stop();
 
-// Classes
 public class Clock
 {
     public event EventHandler? OnTick;
@@ -17,7 +13,7 @@ public class Clock
 
     public Clock()
     {
-        timer = new System.Timers.Timer(1000); // 1 second interval
+        timer = new System.Timers.Timer(1000); 
         timer.Elapsed += (s, e) => OnTick?.Invoke(this, EventArgs.Empty);
     }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// ----------- Test with integers -----------
+// integers 
 Stack<int> intStack = new Stack<int>();
 intStack.Push(10);
 intStack.Push(20);
@@ -12,7 +12,7 @@ Console.WriteLine("Peek: " + intStack.Peek()); // 30
 Console.WriteLine("Pop: " + intStack.Pop());   // 30
 Console.WriteLine("Pop: " + intStack.Pop());   // 20
 
-// ----------- Test with strings -----------
+// strings 
 Stack<string> stringStack = new Stack<string>();
 stringStack.Push("Alice");
 stringStack.Push("Bob");
@@ -26,7 +26,7 @@ Console.WriteLine("Pop: " + stringStack.Pop());   // Bob
 Console.WriteLine("\nIs string stack empty? " + stringStack.IsEmpty());
 
 
-// Generic Stack<T> class
+// Stack
 public class Stack<T>
 {
     private List<T> elements = new List<T>();
@@ -41,7 +41,7 @@ public class Stack<T>
         if (elements.Count == 0)
             throw new InvalidOperationException("Stack is empty.");
 
-        T top = elements[^1]; // ^1 is the last element
+        T top = elements[^1]; 
         elements.RemoveAt(elements.Count - 1);
         return top;
     }
