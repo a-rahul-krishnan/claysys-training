@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day13-20\\exercise7\\LINQAdvanced\\LINQAdvanced.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day13-20\\exercise8\\LINQAdvanced\\LINQAdvanced.csproj",
       "projectName": "LINQAdvanced",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day13-20\\exercise7\\LINQAdvanced\\LINQAdvanced.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day13-20\\exercise8\\LINQAdvanced\\LINQAdvanced.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day13-20\\exercise7\\LINQAdvanced\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day13-20\\exercise8\\LINQAdvanced\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",

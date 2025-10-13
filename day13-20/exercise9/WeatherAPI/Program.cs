@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 
-Console.WriteLine("=== Weather Forecast App (Async / Await Demo) ===\n");
+Console.WriteLine("Weather Forecast :\n");
 
 Console.Write("Enter city names separated by commas (e.g., Chennai, Delhi, Mumbai): ");
 string input = Console.ReadLine() ?? "";
@@ -14,7 +14,7 @@ if (cities.Length == 0)
 
 try
 {
-    // Fetch all weather data concurrently and store results
+    // Fetch all
     var weatherTasks = new List<Task<string>>();
     foreach (var city in cities)
     {
@@ -23,8 +23,8 @@ try
 
     string[] reports = await Task.WhenAll(weatherTasks);
 
-    // Print results neatly after all tasks complete
-    Console.WriteLine("\n=== Weather Reports ===");
+    // Print
+    Console.WriteLine("\n Weather Reports :");
     foreach (var report in reports)
     {
         Console.WriteLine(report);
@@ -40,12 +40,11 @@ Console.WriteLine("Weather fetch completed. Press any key to exit.");
 Console.ReadKey();
 
 
-// === ASYNCHRONOUS METHOD ===
 async Task<string> GetWeatherReportAsync(string city)
 {
     try
     {
-        string apiKey = "e02bec7854f244c3b4795332230407"; // your API key
+        string apiKey = "e02bec7854f244c3b4795332230407"; 
         string url = $"https://api.weatherapi.com/v1/current.json?key={apiKey}&q={city}";
 
         using HttpClient client = new();
@@ -59,7 +58,6 @@ async Task<string> GetWeatherReportAsync(string city)
         double tempC = json["current"]?["temp_c"]?.ToObject<double>() ?? 0;
         double windKph = json["current"]?["wind_kph"]?.ToObject<double>() ?? 0;
 
-        // Return formatted string (instead of printing immediately)
         return
             $"City: {name}, {country}\n" +
             $"Temperature: {tempC} °C\n" +

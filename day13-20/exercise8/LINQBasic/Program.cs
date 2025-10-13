@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿Console.WriteLine("LINQ Queries:");
 
-// Main Program (Top-Level)
-Console.WriteLine("=== 9.4.1 LINQ Queries ===");
-
-// Create a list of products
 List<Product> products = new()
 {
     new Product("laptop", "Electronics", 60000),
@@ -16,16 +10,15 @@ List<Product> products = new()
     new Product("milk", "Grocery", 50)
 };
 
-// Ask user for category
+
 Console.Write("Enter category to filter (Electronics / Clothing / Grocery): ");
 string category = Console.ReadLine();
 
-// LINQ: Find all products in the selected category
+
 var filteredProducts = from p in products
                        where p.Category.Equals(category, StringComparison.OrdinalIgnoreCase)
                        select p;
 
-// LINQ: Calculate average price
 if (filteredProducts.Any())
 {
     double avgPrice = filteredProducts.Average(p => p.Price);

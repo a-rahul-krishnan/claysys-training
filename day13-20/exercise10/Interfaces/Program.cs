@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-Console.WriteLine("=== Interface & Dependency Injection Demo ===\n");
+Console.WriteLine("Interface & Dependency Injection: \n");
 
 Service consoleService = new Service(new ConsoleLogger());
 consoleService.Run();
@@ -11,7 +11,6 @@ fileService.Run();
 
 Console.WriteLine("\nLogs written to console and file.");
 
-// ILogger interface
 public interface ILogger
 {
     void LogInfo(string message);
@@ -43,7 +42,6 @@ public class FileLogger : ILogger
     }
 }
 
-// Service using ILogger
 public class Service
 {
     private readonly ILogger _logger;

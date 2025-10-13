@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-Console.WriteLine("Advanced LINQ Operations:");
+﻿Console.WriteLine("Advanced LINQ Operations:");
 
 
 List<Product> products = new()

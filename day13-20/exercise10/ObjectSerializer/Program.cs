@@ -22,7 +22,6 @@ void PrintProperties(object obj)
     }
 }
 
-// ===== Test Classes =====
 public class Person
 {
     public string Name { get; set; }
