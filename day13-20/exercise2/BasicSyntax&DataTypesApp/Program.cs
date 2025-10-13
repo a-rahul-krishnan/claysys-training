@@ -4,7 +4,7 @@ Basic Synatx
 Data Types in C#
  */
 
-//(I) Data Types :
+// (I) Data Types :
 Console.WriteLine("Basic Data Types in C#:\n");
 //1. int - Integer :
 int age = 25;
@@ -53,7 +53,7 @@ Console.WriteLine("Division : " + age + " / 5 = " + (age / 5));
 Console.WriteLine("Remainder : " + age + " % 4 = " + (age % 4));
 
 
-// (III) Basic Operators in C# :
+// (III) Control Statement Examle in C# :
 Console.WriteLine("\n\nBasic Comparison Operators Example in C#:\n");
 Console.WriteLine("Age:"+age);
 Console.Write("Voting Elegibility : ");
