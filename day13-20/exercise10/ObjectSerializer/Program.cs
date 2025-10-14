@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 
-
 Console.WriteLine("Object Serialization: ");
 
 var person = new Person { Name = "Alice", Age = 30 };
@@ -22,12 +21,15 @@ void PrintProperties(object obj)
     }
 }
 
-public class Person
+[Serializable]  
+    public class Person
 {
     public string Name { get; set; }
     public int Age { get; set; }
 }
 
+
+[Serializable]
 public class Product
 {
     public string ProductName { get; set; }
