@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+    <div class="form-container">
+        <h2>
+            Trainee Information Form
+        </h2>
+        <label for="name">Username: <input type="text" id="name"></label> 
+        <label for="dob">Date of Birth: <input type="date" id="dob"></label>
+        <label for="Gender">Gender: 
+        <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select></label>
+        <button class="Submit" onclick="add();">Submit</button>
+    </div>
+    <div class="result">
+        <table id="result-table">
+            <tr>
+                <th>Username</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+
+        </table>
+
+    </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
