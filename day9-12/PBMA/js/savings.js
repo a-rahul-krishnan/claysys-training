@@ -58,8 +58,6 @@ addGoalBtn.addEventListener("click", () => {
 
   if (contribution === goalAmount) {
     showToast(`Congratulations! You've achieved your "${name}"!`);
-     const lastCard = goalsGrid.lastElementChild; // newly added card
-     launchConfettiOnCard(lastCard);
   }
 
   // Clear inputs
@@ -150,12 +148,6 @@ function openContributionPopup(id) {
         if (g.contributed >= g.goalAmount) {
           g.contributed = g.goalAmount;
           showToast(`Congratulations! You've achieved your "${g.name}"!`);
-          // Find that goal’s card in the grid
-          const goalCards = document.querySelectorAll(".goals-card");
-          const completedCard = Array.from(goalCards).find(card => 
-          card.querySelector("h3").textContent === g.name
-          );
-          if (completedCard) launchConfettiOnCard(completedCard);
         }
       }
       return g;
@@ -197,36 +189,7 @@ function updateTotalProgress() {
   localStorage.setItem("savingsProgress", JSON.stringify({progress, totalSaved, totalTarget}));
 }
 
-// Confetti Animation on Specific Goal Card
-function launchConfettiOnCard(cardElement) {
-  const rect = cardElement.getBoundingClientRect();
-  const x = (rect.left + rect.width / 2) / window.innerWidth;
-  const y = (rect.top + rect.height / 2) / window.innerHeight;
 
-  const duration = 2 * 1000;
-  const animationEnd = Date.now() + duration;
-  const defaults = {
-    startVelocity: 25,
-    spread: 360,
-    ticks: 60,
-    zIndex: 10000,
-  };
-
-  const interval = setInterval(() => {
-    const timeLeft = animationEnd - Date.now();
-
-    if (timeLeft <= 0) {
-      return clearInterval(interval);
-    }
-
-    const particleCount = 30 * (timeLeft / duration);
-    confetti({
-      ...defaults,
-      particleCount,
-      origin: { x, y },
-    });
-  }, 250);
-}
 
 
 // Initial Load 

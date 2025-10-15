@@ -525,7 +525,7 @@ body.dark-mode .goals-card {
     box-shadow: 0.5rem 0.5rem 0.2rem rgba(50, 50, 50, 0.5);
 }
 
-/* ===== Dark Mode Switch ===== */
+/*  Dark Mode Switch */
 .switch {
     position: relative;
     display: inline-block;
