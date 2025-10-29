@@ -1,0 +1,141 @@
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+  
+  <div class="main">
+    <app-header [pageTitle]="'Orders'"></app-header>
+    
+    <div class="info">
+      <div class="details">
+        <h3>Pickup 1</h3>
+        <p>{{ orders.length }} Orders - {{ currentTime }}</p>
+      </div>
+      <div class="filter-container">
+        <select name="filter" id="filter">
+          <option value="Pickups">Pickups</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div *ngFor="let order of orders" [ngClass]="getCardClass(order.status)">
+        
+        <!-- Order Header -->
+        <table class="table-info">
+          <tr *ngIf="expandedOrderId !== order.orderId">
+            <th>Order Id</th>
+            <th>Customer</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>#{{ order.orderId }}</td>
+            <td>{{ order.customerName }}</td>
+            <td>{{ formatDate(order.orderDate) }}</td>
+            <td>£{{ order.totalPrice.toFixed(2) }}</td>
+            <td>
+              <span [ngClass]="getStatusClass(order.status)">{{ order.status }}</span>
+            </td>
+            <td>
+              <div class="action-buttons">
+                <div class="dropdown">
+                  <i class='bx bxs-cog' id="dropbtn"></i>
+                  <div class="dropdown-content">
+                    <a (click)="openEditModal(order)">
+                      Update <i class='bx bx-edit'></i>
+                    </a>
+                    <a (click)="onDeleteOrder(order.orderId!)">
+                      Delete <i class='bx bx-trash'></i>
+                    </a>
+                  </div>
+                </div>
+                <i 
+                  class='bx' 
+                  [ngClass]="expandedOrderId === order.orderId ? 'bx-chevron-up' : 'bx-chevron-down'"
+                  (click)="toggleOrderDetails(order.orderId!)"
+                ></i>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Order Details (Expanded) -->
+        <div *ngIf="expandedOrderId === order.orderId" class="order-details-section">
+          <h3>Order Details</h3>
+          
+          <div id="main-table">
+            <table class="table-content">
+              <tr>
+                <th>Sn</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Price</th>
+              </tr>
+              <tr *ngFor="let item of order.orderItems; let i = index">
+                <td>{{ i + 1 }}.</td>
+                <td>{{ item.productName }}</td>
+                <td>{{ item.quantity }} pic</td>
+                <td>£{{ item.price.toFixed(2) }}</td>
+                <td>£{{ item.totalPrice?.toFixed(2) }}</td>
+              </tr>
+              <tr id="total-price-row">
+                <td></td>
+                <td>Total Price</td>
+                <td></td>
+                <td></td>
+                <td>£{{ order.totalPrice.toFixed(2) }}</td>
+              </tr>
+            </table>
+
+            <div class="table-button" *ngIf="order.status === 'Pending'">
+              <div>
+                <button id="cancel" (click)="onCancelOrder(order.orderId!)">
+                  Cancel order
+                </button>
+                <button id="accept" (click)="onAcceptOrder(order.orderId!)">
+                  Accept for pickup
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal-overlay" *ngIf="showEditModal" (click)="closeEditModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Edit Order</h2>
+      <i class='bx bx-x' (click)="closeEditModal()"></i>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="editCustomerName">Customer Name</label>
+        <input 
+          type="text" 
+          id="editCustomerName" 
+          [(ngModel)]="editCustomerName"
+          placeholder="Enter customer name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="editOrderDate">Order Date</label>
+        <input 
+          type="date" 
+          id="editOrderDate" 
+          [(ngModel)]="editOrderDate"
+        />
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" (click)="closeEditModal()">Cancel</button>
+      <button class="btn-save" (click)="onUpdateOrder()">Save Changes</button>
+    </div>
+  </div>
+</div>

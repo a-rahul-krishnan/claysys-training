@@ -1,0 +1,39 @@
+<div class="login-container">
+  <div class="login-card">
+    <h1 class="logo">
+      <span class="logo-pick">Pick</span> 
+      <span class="logo-your">Your</span>
+      <span class="logo-cloth">Cloth</span>
+    </h1>
+    <h2>Admin Login</h2>
+    <form (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          [(ngModel)]="username" 
+          name="username" 
+          required
+          placeholder="Enter username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="password" 
+          name="password" 
+          required
+          placeholder="Enter password"
+        />
+      </div>
+      <div class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+      <button type="submit" class="btn-login">Login</button>
+    </form>
+    <p class="hint">Hint: username: admin, password: admin123</p>
+  </div>
+</div>

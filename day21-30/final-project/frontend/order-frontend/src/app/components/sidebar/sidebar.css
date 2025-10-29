@@ -1,0 +1,76 @@
+.sidebar {
+  border-radius: 10px;
+  padding: 10px;
+  background: white;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.logo {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.logo-pick {
+  color: #00afff;
+}
+
+.logo-your {
+  font-weight: lighter;
+}
+
+.logo-cloth {
+  color: #70b873;
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 30px;
+  padding: 0;
+}
+
+nav li {
+  margin: 0.5rem 0;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  color: #000;
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px;
+  transition: 250ms ease;
+}
+
+nav a:hover {
+  background-color: #00afff;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+nav a:hover i {
+  color: #00afff;
+}
+
+.current-tab a {
+  background-color: #00afff;
+  color: white;
+}
+
+.current-tab i {
+  color: #00afff !important;
+}
+
+nav i {
+  color: rgba(220, 220, 220);
+  font-size: 1.7rem;
+  background-color: white;
+  border-radius: 2px;
+  margin-right: 10px;
+}

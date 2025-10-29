@@ -1,0 +1,59 @@
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+  
+  <div class="main">
+    <app-header [pageTitle]="'Dashboard'"></app-header>
+    
+    <div class="content">
+      <div class="section-header">
+        <h2>Create New Order</h2>
+      </div>
+
+      <div class="alert alert-success" *ngIf="successMessage">
+        {{ successMessage }}
+      </div>
+
+      <div class="alert alert-error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <div class="order-form-card">
+        <div class="form-group">
+          <label for="customerName">Customer Name</label>
+          <input 
+            type="text" 
+            id="customerName" 
+            [(ngModel)]="customerName" 
+            placeholder="Enter customer name"
+          />
+        </div>
+
+        <h3>Select Products</h3>
+        <div class="products-grid">
+          <div class="product-card" *ngFor="let item of orderItems">
+            <div class="product-info">
+              <h4>{{ item.productName }}</h4>
+              <p class="product-price">£{{ item.price.toFixed(2) }}</p>
+            </div>
+            <div class="quantity-control">
+              <label>Quantity:</label>
+              <input 
+                type="number" 
+                min="0" 
+                [(ngModel)]="item.quantity" 
+                (ngModelChange)="updateTotal(item)"
+                class="quantity-input"
+              />
+              <span class="item-total">Total: £{{ item.totalPrice?.toFixed(2) || '0.00' }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-summary">
+          <h3>Order Total: £{{ getTotalPrice().toFixed(2) }}</h3>
+          <button class="btn-submit" (click)="onSubmitOrder()">Create Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
