@@ -17,8 +17,10 @@ import { Header } from '../header/header';
 })
 export class Dashboard implements OnInit{
  products: Product[] = [];
+  filteredProducts: Product[] = [];
   orderItems: OrderItem[] = [];
   customerName = '';
+  searchQuery = '';
   successMessage = '';
   errorMessage = '';
 
@@ -35,11 +37,13 @@ export class Dashboard implements OnInit{
     this.productService.getProducts().subscribe({
       next: (data) => {
         this.products = data;
+        this.filteredProducts = data;
         this.initializeOrderItems();
       },
       error: (err) => {
         console.error('Error loading products:', err);
         this.errorMessage = 'Failed to load products';
+        this.clearMessagesAfterDelay();
       }
     });
   }
@@ -54,6 +58,18 @@ export class Dashboard implements OnInit{
     }));
   }
 
+  onSearchChange(): void {
+    const query = this.searchQuery.toLowerCase().trim();
+    if (!query) {
+      this.filteredProducts = this.products;
+    } else {
+      this.filteredProducts = this.products.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.productId.toString().includes(query)
+      );
+    }
+  }
+
   updateTotal(item: OrderItem): void {
     item.totalPrice = item.quantity * item.price;
   }
@@ -65,12 +81,16 @@ export class Dashboard implements OnInit{
   onSubmitOrder(): void {
     if (!this.customerName.trim()) {
       this.errorMessage = 'Please enter customer name';
+      this.successMessage = '';
+      this.clearMessagesAfterDelay();
       return;
     }
 
     const selectedItems = this.orderItems.filter(item => item.quantity > 0);
     if (selectedItems.length === 0) {
       this.errorMessage = 'Please select at least one product';
+      this.successMessage = '';
+      this.clearMessagesAfterDelay();
       return;
     }
 
@@ -87,11 +107,13 @@ export class Dashboard implements OnInit{
         this.successMessage = `Order created successfully! Order ID: ${response.orderId}`;
         this.errorMessage = '';
         this.resetForm();
+        this.clearMessagesAfterDelay();
       },
       error: (err) => {
         console.error('Error creating order:', err);
-        this.errorMessage = 'Failed to create order';
+        this.errorMessage = 'Failed to create order. Please try again.';
         this.successMessage = '';
+        this.clearMessagesAfterDelay();
       }
     });
   }
@@ -99,5 +121,25 @@ export class Dashboard implements OnInit{
   resetForm(): void {
     this.customerName = '';
     this.initializeOrderItems();
+  }
+
+  clearMessagesAfterDelay(): void {
+    setTimeout(() => {
+      this.successMessage = '';
+      this.errorMessage = '';
+    }, 5000);
+  }
+
+  getQuantity(productId: number): number {
+    const item = this.orderItems.find(i => i.productId === productId);
+    return item ? item.quantity : 0;
+  }
+
+  setQuantity(productId: number, quantity: number): void {
+    const item = this.orderItems.find(i => i.productId === productId);
+    if (item) {
+      item.quantity = quantity;
+      this.updateTotal(item);
+    }
   }
 }

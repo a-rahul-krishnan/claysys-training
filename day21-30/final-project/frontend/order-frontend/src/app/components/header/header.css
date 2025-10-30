@@ -51,6 +51,11 @@ input[type=search] {
   background-color: rgba(220, 220, 220);
 }
 
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
 .profile-tab {
   display: flex;
   align-items: center;
@@ -75,4 +80,39 @@ input[type=search] {
   justify-content: center;
   font-weight: bold;
   margin-right: 5px;
+}
+
+.profile-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.profile-dropdown:hover .profile-dropdown-content {
+  display: block;
+}
+
+.profile-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.profile-dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.profile-dropdown-content a i {
+  font-size: 1.2rem;
 }

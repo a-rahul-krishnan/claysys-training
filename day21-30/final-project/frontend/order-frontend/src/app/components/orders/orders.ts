@@ -14,30 +14,51 @@ import { Order } from '../../models/order';
 })
 export class Orders implements OnInit{
   orders: Order[] = [];
+  filteredOrders: Order[] = [];
   expandedOrderId: number | null = null;
   showEditModal = false;
   selectedOrder: Order | null = null;
   editCustomerName = '';
   editOrderDate = '';
-  currentTime: string = '';
+  searchQuery = '';
+  currentTime: Date = new Date();
 
   constructor(private orderService: OrderService) {}
 
   ngOnInit(): void {
-    this.currentTime = new Date().toLocaleTimeString();
     this.loadOrders();
+    this.updateCurrentTime();
+  }
+
+  updateCurrentTime(): void {
+    this.currentTime = new Date();
   }
 
   loadOrders(): void {
     this.orderService.getAllOrders().subscribe({
       next: (data) => {
         this.orders = data;
+        this.filteredOrders = data;
+        this.onSearchChange();
       },
       error: (err) => {
         console.error('Error loading orders:', err);
         alert('Failed to load orders');
       }
     });
+  }
+
+  onSearchChange(): void {
+    const query = this.searchQuery.toLowerCase().trim();
+    if (!query) {
+      this.filteredOrders = this.orders;
+    } else {
+      this.filteredOrders = this.orders.filter(order =>
+        order.orderId?.toString().includes(query) ||
+        order.customerName.toLowerCase().includes(query) ||
+        order.status.toLowerCase().includes(query)
+      );
+    }
   }
 
   toggleOrderDetails(orderId: number): void {
@@ -58,7 +79,14 @@ export class Orders implements OnInit{
   }
 
   getCardClass(status: string): string {
-    return status.toLowerCase() === 'completed' ? 'completed-card' : 'main-card';
+    switch (status.toLowerCase()) {
+      case 'completed':
+        return 'completed-card';
+      case 'failed':
+        return 'failed-card';
+      default:
+        return 'main-card';
+    }
   }
 
   onCancelOrder(orderId: number): void {
@@ -147,5 +175,4 @@ export class Orders implements OnInit{
       year: 'numeric'
     });
   }
-
 }

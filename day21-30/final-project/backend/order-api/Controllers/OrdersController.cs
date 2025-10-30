@@ -184,22 +184,25 @@ namespace OrderManagementAPI.Controllers
         public IActionResult UpdateOrder(int id, [FromBody] Order order)
         {
             if (order == null)
-                return BadRequest("Invalid order data.");
+                return BadRequest(new { message = "Invalid order data." });
 
             using var conn = _db.GetConnection();
             conn.Open();
 
             string sql = @"UPDATE Orders 
-                           SET CustomerName = @CustomerName, OrderDate = @OrderDate
-                           WHERE OrderId = @OrderId";
+                   SET CustomerName = @CustomerName, OrderDate = @OrderDate
+                   WHERE OrderId = @OrderId";
             using var cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@CustomerName", order.CustomerName);
             cmd.Parameters.AddWithValue("@OrderDate", order.OrderDate);
             cmd.Parameters.AddWithValue("@OrderId", id);
 
             int rows = cmd.ExecuteNonQuery();
-            return rows > 0 ? Ok("Order updated successfully") : NotFound("Order not found");
+            return rows > 0
+                ? Ok(new { message = "Order updated successfully", orderId = id })
+                : NotFound(new { message = "Order not found" });
         }
+
 
         // ✅ PATCH /api/Orders/{id}/{status}
         [HttpPatch("{id}/{status}")]
@@ -236,8 +239,8 @@ namespace OrderManagementAPI.Controllers
 
             int rows = cmd.ExecuteNonQuery();
             return rows > 0
-                ? Ok($"Order {id} deleted successfully (including its items).")
-                : NotFound("Order not found");
+                ? Ok(new { message = $"Order {id} deleted successfully", orderId = id })
+                : NotFound(new { message = "Order not found" });
         }
     }
 }

@@ -1,0 +1,35 @@
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+  
+  <div class="main">
+    <app-header [pageTitle]="'Offers'"></app-header>
+    
+    <div class="content">
+      <div class="section-header">
+        <h2>Available Offers</h2>
+        <p>Use these coupon codes to get amazing discounts on your orders!</p>
+      </div>
+
+      <div class="offers-grid">
+        <div class="offer-card" *ngFor="let offer of offers" [style.border-color]="offer.color">
+          <div class="offer-header" [style.background-color]="offer.color">
+            <h3>{{ offer.title }}</h3>
+            <div class="discount-badge">{{ offer.discount }}%</div>
+          </div>
+          <div class="offer-body">
+            <p class="offer-description">{{ offer.description }}</p>
+            <div class="coupon-section">
+              <div class="coupon-code">
+                <i class='bx bx-purchase-tag'></i>
+                <span>{{ offer.couponCode }}</span>
+              </div>
+              <button class="copy-btn" (click)="copyCoupon(offer.couponCode)">
+                <i class='bx bx-copy'></i> Copy
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

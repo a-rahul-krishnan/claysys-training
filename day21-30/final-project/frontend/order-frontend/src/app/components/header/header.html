@@ -3,12 +3,25 @@
   <div class="header-right">
     <div class="search-bar">
       <i class='bx bx-search-alt'></i>
-      <input type="search" class="search-input" placeholder="Search in Pick Your Cloth" />
+      <input 
+        type="search" 
+        class="search-input" 
+        [placeholder]="'Search in ' + pageTitle"
+        [value]="searchQuery"
+        (input)="onSearchChange($any($event.target).value)"
+      />
     </div>
     <i class='bx bx-bell' id="notification"></i>
-    <div class="profile-tab" (click)="onLogout()">
-      <div class="profile-circle">A</div>
-      <i class='bx bx-chevron-down'></i>
+    <div class="profile-dropdown">
+      <div class="profile-tab">
+        <div class="profile-circle">A</div>
+        <i class='bx bx-chevron-down'></i>
+      </div>
+      <div class="profile-dropdown-content">
+        <a (click)="onLogout()">
+          <i class='bx bx-log-out'></i> Logout
+        </a>
+      </div>
     </div>
   </div>
 </header>
