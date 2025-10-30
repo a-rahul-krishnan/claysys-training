@@ -9,6 +9,11 @@ import { Order } from '../../models/order';
 import { OrderItem } from '../../models/order-item';
 import { Header } from '../header/header';
 
+interface Coupon {
+  code: string;
+  discount: number;
+}
+
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule, FormsModule, Sidebar, Header],
@@ -21,8 +26,18 @@ export class Dashboard implements OnInit{
   orderItems: OrderItem[] = [];
   customerName = '';
   searchQuery = '';
+  couponCode = '';
+  appliedDiscount = 0;
   successMessage = '';
   errorMessage = '';
+
+  // Available coupons (matching offers page)
+  coupons: Coupon[] = [
+    { code: 'SAVE10', discount: 10 },
+    { code: 'SAVE15', discount: 15 },
+    { code: 'SAVE20', discount: 20 },
+    { code: 'SAVE25', discount: 25 }
+  ];
 
   constructor(
     private productService: ProductService,
@@ -42,8 +57,7 @@ export class Dashboard implements OnInit{
       },
       error: (err) => {
         console.error('Error loading products:', err);
-        this.errorMessage = 'Failed to load products';
-        this.clearMessagesAfterDelay();
+        alert('Failed to load products. Please check if the backend API is running.');
       }
     });
   }
@@ -70,6 +84,26 @@ export class Dashboard implements OnInit{
     }
   }
 
+  applyCoupon(): void {
+    const coupon = this.coupons.find(c => c.code === this.couponCode.toUpperCase());
+    if (coupon) {
+      this.appliedDiscount = coupon.discount;
+      this.successMessage = `Coupon "${coupon.code}" applied! You got ${coupon.discount}% discount.`;
+      this.errorMessage = '';
+      this.clearMessagesAfterDelay();
+    } else {
+      this.appliedDiscount = 0;
+      this.errorMessage = 'Invalid coupon code!';
+      this.successMessage = '';
+      this.clearMessagesAfterDelay();
+    }
+  }
+
+  removeCoupon(): void {
+    this.couponCode = '';
+    this.appliedDiscount = 0;
+  }
+
   updateTotal(item: OrderItem): void {
     item.totalPrice = item.quantity * item.price;
   }
@@ -78,48 +112,85 @@ export class Dashboard implements OnInit{
     return this.orderItems.reduce((sum, item) => sum + (item.totalPrice || 0), 0);
   }
 
-  onSubmitOrder(): void {
-    if (!this.customerName.trim()) {
-      this.errorMessage = 'Please enter customer name';
-      this.successMessage = '';
-      this.clearMessagesAfterDelay();
-      return;
-    }
-
-    const selectedItems = this.orderItems.filter(item => item.quantity > 0);
-    if (selectedItems.length === 0) {
-      this.errorMessage = 'Please select at least one product';
-      this.successMessage = '';
-      this.clearMessagesAfterDelay();
-      return;
-    }
-
-    const order: Order = {
-      customerName: this.customerName,
-      orderDate: new Date().toISOString(),
-      status: 'Pending',
-      totalPrice: this.getTotalPrice(),
-      orderItems: selectedItems
-    };
-
-    this.orderService.createOrder(order).subscribe({
-      next: (response) => {
-        this.successMessage = `Order created successfully! Order ID: ${response.orderId}`;
-        this.errorMessage = '';
-        this.resetForm();
-        this.clearMessagesAfterDelay();
-      },
-      error: (err) => {
-        console.error('Error creating order:', err);
-        this.errorMessage = 'Failed to create order. Please try again.';
-        this.successMessage = '';
-        this.clearMessagesAfterDelay();
-      }
-    });
+  getDiscountAmount(): number {
+    return (this.getTotalPrice() * this.appliedDiscount) / 100;
   }
+
+  getFinalPrice(): number {
+    return this.getTotalPrice() - this.getDiscountAmount();
+  }
+
+  setQuantity(productId: number, quantity: number): void {
+  const item = this.orderItems.find(i => i.productId === productId);
+  const product = this.products.find(p => p.productId === productId);
+  
+  if (item && product) {
+    if (quantity > product.stock) {
+      alert(`Only ${product.stock} units available for ${product.name}`);
+      item.quantity = product.stock;
+    } else {
+      item.quantity = quantity;
+    }
+    this.updateTotal(item);
+  }
+}
+
+onSubmitOrder(): void {
+  if (!this.customerName.trim()) {
+    this.errorMessage = 'Please enter customer name';
+    this.successMessage = '';
+    this.clearMessagesAfterDelay();
+    return;
+  }
+
+  const selectedItems = this.orderItems.filter(item => item.quantity > 0);
+  if (selectedItems.length === 0) {
+    this.errorMessage = 'Please select at least one product';
+    this.successMessage = '';
+    this.clearMessagesAfterDelay();
+    return;
+  }
+
+  // Check stock availability
+  for (const item of selectedItems) {
+    const product = this.products.find(p => p.productId === item.productId);
+    if (product && item.quantity > product.stock) {
+      this.errorMessage = `Insufficient stock for ${product.name}. Available: ${product.stock}`;
+      this.successMessage = '';
+      this.clearMessagesAfterDelay();
+      return;
+    }
+  }
+
+  const order: Order = {
+    customerName: this.customerName,
+    orderDate: new Date().toISOString(),
+    status: 'Pending',
+    totalPrice: this.getFinalPrice(),
+    orderItems: selectedItems
+  };
+
+  this.orderService.createOrder(order).subscribe({
+    next: (response) => {
+      this.successMessage = `Order created successfully! Order ID: ${response.orderId}. Final Amount: £${this.getFinalPrice().toFixed(2)}`;
+      this.errorMessage = '';
+      this.resetForm();
+      this.loadProducts(); // Reload to get updated stock
+      this.clearMessagesAfterDelay();
+    },
+    error: (err) => {
+      console.error('Error creating order:', err);
+      this.errorMessage = err.error?.message || 'Failed to create order. Please try again.';
+      this.successMessage = '';
+      this.clearMessagesAfterDelay();
+    }
+  });
+}
 
   resetForm(): void {
     this.customerName = '';
+    this.couponCode = '';
+    this.appliedDiscount = 0;
     this.initializeOrderItems();
   }
 
@@ -135,11 +206,5 @@ export class Dashboard implements OnInit{
     return item ? item.quantity : 0;
   }
 
-  setQuantity(productId: number, quantity: number): void {
-    const item = this.orderItems.find(i => i.productId === productId);
-    if (item) {
-      item.quantity = quantity;
-      this.updateTotal(item);
-    }
-  }
+
 }

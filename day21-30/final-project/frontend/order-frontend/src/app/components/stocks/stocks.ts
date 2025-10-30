@@ -1,11 +1,72 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Sidebar } from '../sidebar/sidebar';
+import { Header } from '../header/header';
+import { Product } from '../../models/product';
+import { ProductService } from '../../services/product';
 
 @Component({
   selector: 'app-stocks',
-  imports: [],
+  imports: [CommonModule, FormsModule, Sidebar, Header],
   templateUrl: './stocks.html',
   styleUrl: './stocks.css',
 })
-export class Stocks {
+export class Stocks implements OnInit {
+ products: Product[] = [];
+  filteredProducts: Product[] = [];
+  searchQuery = '';
+  loading = true;
 
+  constructor(private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.loadProducts();
+  }
+
+  loadProducts(): void {
+    this.loading = true;
+    this.productService.getProducts().subscribe({
+      next: (data) => {
+        this.products = data;
+        this.filteredProducts = data;
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Error loading products:', err);
+        alert('Failed to load stock information');
+        this.loading = false;
+      }
+    });
+  }
+
+  onSearchChange(): void {
+    const query = this.searchQuery.toLowerCase().trim();
+    if (!query) {
+      this.filteredProducts = this.products;
+    } else {
+      this.filteredProducts = this.products.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.productId.toString().includes(query)
+      );
+    }
+  }
+
+  getStockStatus(stock: number): string {
+    if (stock === 0) return 'out-of-stock';
+    if (stock < 30) return 'low-stock';
+    if (stock < 70) return 'medium-stock';
+    return 'high-stock';
+  }
+
+  getStockLabel(stock: number): string {
+    if (stock === 0) return 'Out of Stock';
+    if (stock < 30) return 'Low Stock';
+    if (stock < 70) return 'Medium Stock';
+    return 'In Stock';
+  }
+
+  refreshStock(): void {
+    this.loadProducts();
+  }
 }

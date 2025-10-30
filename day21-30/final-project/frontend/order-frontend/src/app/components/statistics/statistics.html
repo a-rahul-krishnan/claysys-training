@@ -1,1 +1,71 @@
-<p>statistics works!</p>
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+  
+  <div class="main">
+    <app-header [pageTitle]="'Statistics'"></app-header>
+    
+    <div class="content">
+      <div class="section-header">
+        <h2>Order Statistics</h2>
+        <p>Overview of all orders and their statuses</p>
+      </div>
+
+      <div *ngIf="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading statistics...</p>
+      </div>
+
+      <div *ngIf="!loading" class="stats-grid">
+        <div class="stat-card total-card">
+          <div class="stat-icon">
+            <i class='bx bx-shopping-bag'></i>
+          </div>
+          <div class="stat-details">
+            <h3>{{ stats.total }}</h3>
+            <p>Total Orders</p>
+          </div>
+        </div>
+
+        <div class="stat-card pending-card">
+          <div class="stat-icon">
+            <i class='bx bx-time'></i>
+          </div>
+          <div class="stat-details">
+            <h3>{{ stats.pending }}</h3>
+            <p>Pending Orders</p>
+          </div>
+        </div>
+
+        <div class="stat-card completed-card">
+          <div class="stat-icon">
+            <i class='bx bx-check-circle'></i>
+          </div>
+          <div class="stat-details">
+            <h3>{{ stats.completed }}</h3>
+            <p>Completed Orders</p>
+          </div>
+        </div>
+
+        <div class="stat-card failed-card">
+          <div class="stat-icon">
+            <i class='bx bx-x-circle'></i>
+          </div>
+          <div class="stat-details">
+            <h3>{{ stats.failed }}</h3>
+            <p>Failed Orders</p>
+          </div>
+        </div>
+
+        <div class="stat-card revenue-card">
+          <div class="stat-icon">
+            <i class='bx bx-pound'></i>
+          </div>
+          <div class="stat-details">
+            <h3>£{{ stats.totalRevenue.toFixed(2) }}</h3>
+            <p>Total Revenue</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

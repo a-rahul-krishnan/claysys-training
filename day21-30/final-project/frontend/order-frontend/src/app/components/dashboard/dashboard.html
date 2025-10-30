@@ -34,41 +34,88 @@
         
         <div class="products-table-container">
           <table class="products-table">
-            <thead>
-              <tr>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let product of filteredProducts">
-                <td>#{{ product.productId }}</td>
-                <td>{{ product.name }}</td>
-                <td>£{{ product.price.toFixed(2) }}</td>
-                <td>
-                  <input 
-                    type="number" 
-                    min="0" 
-                    [value]="getQuantity(product.productId)"
-                    (input)="setQuantity(product.productId, +$any($event.target).value)"
-                    class="quantity-input"
-                  />
-                </td>
-                <td class="total-cell">£{{ (getQuantity(product.productId) * product.price).toFixed(2) }}</td>
-              </tr>
-            </tbody>
-          </table>
+  <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Available Stock</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of filteredProducts" [class.low-stock-row]="product.stock < 30">
+      <td>#{{ product.productId }}</td>
+      <td>{{ product.name }}</td>
+      <td>£{{ product.price.toFixed(2) }}</td>
+      <td>
+        <span>
+          {{ product.stock }} units
+        </span>
+      </td>
+      <td>
+        <input 
+          type="number" 
+          min="0" 
+          [max]="product.stock"
+          [value]="getQuantity(product.productId)"
+          (input)="setQuantity(product.productId, +$any($event.target).value)"
+          class="quantity-input"
+          [disabled]="product.stock === 0"
+        />
+      </td>
+      <td class="total-cell">£{{ (getQuantity(product.productId) * product.price).toFixed(2) }}</td>
+    </tr>
+  </tbody>
+</table>
 
           <div *ngIf="filteredProducts.length === 0" class="no-results">
             No products found for "{{ searchQuery }}"
           </div>
         </div>
 
+        <!-- Coupon Section -->
+        <div class="coupon-section">
+          <h3>Apply Coupon Code</h3>
+          <div class="coupon-input-group">
+            <input 
+              type="text" 
+              [(ngModel)]="couponCode" 
+              placeholder="Enter coupon code"
+              class="coupon-input"
+              [disabled]="appliedDiscount > 0"
+            />
+            <button 
+              *ngIf="appliedDiscount === 0" 
+              class="btn-apply-coupon" 
+              (click)="applyCoupon()">
+              Apply
+            </button>
+            <button 
+              *ngIf="appliedDiscount > 0" 
+              class="btn-remove-coupon" 
+              (click)="removeCoupon()">
+              Remove
+            </button>
+          </div>
+        </div>
+
         <div class="order-summary">
-          <h3>Order Total: £{{ getTotalPrice().toFixed(2) }}</h3>
+          <div class="summary-details">
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span>£{{ getTotalPrice().toFixed(2) }}</span>
+            </div>
+            <div class="summary-row" *ngIf="appliedDiscount > 0">
+              <span>Discount ({{ appliedDiscount }}%):</span>
+              <span class="discount-amount">- £{{ getDiscountAmount().toFixed(2) }}</span>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total Amount:</span>
+              <span>£{{ getFinalPrice().toFixed(2) }}</span>
+            </div>
+          </div>
           <button class="btn-submit" (click)="onSubmitOrder()">Create Order</button>
         </div>
       </div>

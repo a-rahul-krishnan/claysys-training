@@ -1,0 +1,116 @@
+.page-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 16% 84%;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.main {
+  border-radius: 20px;
+  background-color: rgba(229, 248, 255);
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: #666;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  background: white;
+  border-radius: 10px;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #00afff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.product-table-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table thead {
+  background: #f8f9fa;
+}
+
+.product-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.product-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.product-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.product-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.price-cell {
+  color: #00afff;
+  font-weight: bold;
+}
+
+.no-products {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,1 +1,42 @@
-<p>products works!</p>
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+  
+  <div class="main">
+    <app-header [pageTitle]="'Products'"></app-header>
+    
+    <div class="content">
+      <div class="section-header">
+        <h2>Product List</h2>
+        <p>All available products in the system</p>
+      </div>
+
+      <div *ngIf="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading products...</p>
+      </div>
+
+      <div *ngIf="!loading" class="product-table-card">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products">
+              <td>#{{ product.productId }}</td>
+              <td>{{ product.name }}</td>
+              <td class="price-cell">£{{ product.price.toFixed(2) }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div *ngIf="products.length === 0" class="no-products">
+          No products available
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

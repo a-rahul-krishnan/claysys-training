@@ -54,7 +54,7 @@ namespace OrderManagementAPI.Controllers
 
             return Ok(items);
         }
-    
+
 
         // ✅ POST /api/Orders
         [HttpPost]
@@ -71,16 +71,32 @@ namespace OrderManagementAPI.Controllers
             {
                 decimal totalOrderPrice = 0;
 
-                // 1️⃣ Insert order (default: Pending, OrderDate = GETDATE())
+                // 1️⃣ Check stock availability for all items first
+                foreach (var item in order.OrderItems)
+                {
+                    string stockCheckSql = "SELECT Stock FROM Products WHERE ProductId = @pid";
+                    using var stockCmd = new SqlCommand(stockCheckSql, conn, tx);
+                    stockCmd.Parameters.AddWithValue("@pid", item.ProductId);
+                    var stockResult = stockCmd.ExecuteScalar();
+
+                    if (stockResult == null)
+                        throw new Exception($"Product not found: {item.ProductId}");
+
+                    int availableStock = (int)stockResult;
+                    if (availableStock < item.Quantity)
+                        throw new Exception($"Insufficient stock for product {item.ProductId}. Available: {availableStock}, Required: {item.Quantity}");
+                }
+
+                // 2️⃣ Insert order (default: Pending, OrderDate = GETDATE())
                 string orderSql = "INSERT INTO Orders (CustomerName) OUTPUT INSERTED.OrderId VALUES (@CustomerName)";
                 using var orderCmd = new SqlCommand(orderSql, conn, tx);
                 orderCmd.Parameters.AddWithValue("@CustomerName", order.CustomerName);
                 int orderId = (int)orderCmd.ExecuteScalar();
 
-                // 2️⃣ Insert order items and compute total
+                // 3️⃣ Insert order items, compute total, and reduce stock
                 foreach (var item in order.OrderItems)
                 {
-                    // Get product price safely
+                    // Get product price
                     string priceQuery = "SELECT Price FROM Products WHERE ProductId = @pid";
                     using var priceCmd = new SqlCommand(priceQuery, conn, tx);
                     priceCmd.Parameters.AddWithValue("@pid", item.ProductId);
@@ -93,18 +109,26 @@ namespace OrderManagementAPI.Controllers
                     decimal itemTotal = price * item.Quantity;
                     totalOrderPrice += itemTotal;
 
+                    // Insert order item
                     string insertItemSql = @"
-                        INSERT INTO OrderItems (OrderId, ProductId, Quantity, Price)
-                        VALUES (@OrderId, @ProductId, @Quantity, @Price)";
+                INSERT INTO OrderItems (OrderId, ProductId, Quantity, Price)
+                VALUES (@OrderId, @ProductId, @Quantity, @Price)";
                     using var itemCmd = new SqlCommand(insertItemSql, conn, tx);
                     itemCmd.Parameters.AddWithValue("@OrderId", orderId);
                     itemCmd.Parameters.AddWithValue("@ProductId", item.ProductId);
                     itemCmd.Parameters.AddWithValue("@Quantity", item.Quantity);
                     itemCmd.Parameters.AddWithValue("@Price", price);
                     itemCmd.ExecuteNonQuery();
+
+                    // Reduce stock
+                    string updateStockSql = "UPDATE Products SET Stock = Stock - @Quantity WHERE ProductId = @ProductId";
+                    using var stockCmd = new SqlCommand(updateStockSql, conn, tx);
+                    stockCmd.Parameters.AddWithValue("@Quantity", item.Quantity);
+                    stockCmd.Parameters.AddWithValue("@ProductId", item.ProductId);
+                    stockCmd.ExecuteNonQuery();
                 }
 
-                // 3️⃣ Update total order price
+                // 4️⃣ Update total order price
                 string updateSql = "UPDATE Orders SET TotalPrice = @Total WHERE OrderId = @OrderId";
                 using var updateCmd = new SqlCommand(updateSql, conn, tx);
                 updateCmd.Parameters.AddWithValue("@Total", totalOrderPrice);
@@ -117,7 +141,7 @@ namespace OrderManagementAPI.Controllers
             catch (Exception ex)
             {
                 tx.Rollback();
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, new { message = ex.Message });
             }
         }
 

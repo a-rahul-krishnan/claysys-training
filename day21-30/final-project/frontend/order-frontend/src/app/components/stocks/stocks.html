@@ -1,1 +1,59 @@
-<p>stocks works!</p>
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+  
+  <div class="main">
+    <app-header 
+      [pageTitle]="'Stock'" 
+      [searchQuery]="searchQuery" 
+      (searchChange)="searchQuery = $event; onSearchChange()">
+    </app-header>
+    
+    <div class="content">
+      <div class="section-header">
+        <div>
+          <h2>Stock Management</h2>
+          <p>Monitor product inventory levels</p>
+        </div>
+        <button class="btn-refresh" (click)="refreshStock()">
+          <i class='bx bx-refresh'></i> Refresh
+        </button>
+      </div>
+
+      <div *ngIf="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading stock information...</p>
+      </div>
+
+      <div *ngIf="!loading" class="stock-table-card">
+        <table class="stock-table">
+          <thead>
+            <tr>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Stock Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of filteredProducts">
+              <td>#{{ product.productId }}</td>
+              <td>{{ product.name }}</td>
+              <td class="price-cell">£{{ product.price.toFixed(2) }}</td>
+              <td class="stock-quantity">
+                <div class="quantity-display">
+                  <i class='bx bx-package'></i>
+                  <span>{{ product.stock }} units</span>
+                </div>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+
+        <div *ngIf="filteredProducts.length === 0" class="no-products">
+          No products found for "{{ searchQuery }}"
+        </div>
+      </div>
+
+  </div>
+</div>
