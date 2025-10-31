@@ -16,45 +16,6 @@ namespace OrderManagementAPI.Controllers
             _db = db;
         }
 
-        [HttpGet("{orderId}")]
-        public IActionResult GetOrderItemsByOrderId(int orderId)
-        {
-            var items = new List<OrderItem>();
-
-            using var conn = _db.GetConnection();
-            conn.Open();
-
-            string sql = @"
-                SELECT oi.OrderItemId, oi.OrderId, oi.ProductId, p.Name AS ProductName,
-                       oi.Quantity, oi.Price, oi.TotalPrice
-                FROM OrderItems oi
-                JOIN Products p ON oi.ProductId = p.ProductId
-                WHERE oi.OrderId = @OrderId";
-
-            using var cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@OrderId", orderId);
-
-            using var reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                items.Add(new OrderItem
-                {
-                    OrderItemId = (int)reader["OrderItemId"],
-                    OrderId = (int)reader["OrderId"],
-                    ProductId = (int)reader["ProductId"],
-                    ProductName = reader["ProductName"].ToString(),
-                    Quantity = (int)reader["Quantity"],
-                    Price = (decimal)reader["Price"],
-                    TotalPrice = (decimal)reader["TotalPrice"]
-                });
-            }
-
-            if (items.Count == 0)
-                return NotFound($"No order items found for OrderId {orderId}.");
-
-            return Ok(items);
-        }
-
 
         // ✅ POST /api/Orders
         [HttpPost]
@@ -71,7 +32,7 @@ namespace OrderManagementAPI.Controllers
             {
                 decimal totalOrderPrice = 0;
 
-                // 1️⃣ Check stock availability for all items first
+                // 1️ Check stock availability for all items first
                 foreach (var item in order.OrderItems)
                 {
                     string stockCheckSql = "SELECT Stock FROM Products WHERE ProductId = @pid";
@@ -87,13 +48,13 @@ namespace OrderManagementAPI.Controllers
                         throw new Exception($"Insufficient stock for product {item.ProductId}. Available: {availableStock}, Required: {item.Quantity}");
                 }
 
-                // 2️⃣ Insert order (default: Pending, OrderDate = GETDATE())
+                //  Insert order (default: Pending, OrderDate = GETDATE())
                 string orderSql = "INSERT INTO Orders (CustomerName) OUTPUT INSERTED.OrderId VALUES (@CustomerName)";
                 using var orderCmd = new SqlCommand(orderSql, conn, tx);
                 orderCmd.Parameters.AddWithValue("@CustomerName", order.CustomerName);
                 int orderId = (int)orderCmd.ExecuteScalar();
 
-                // 3️⃣ Insert order items, compute total, and reduce stock
+                //  Insert order items, compute total, and reduce stock
                 foreach (var item in order.OrderItems)
                 {
                     // Get product price
@@ -128,7 +89,7 @@ namespace OrderManagementAPI.Controllers
                     stockCmd.ExecuteNonQuery();
                 }
 
-                // 4️⃣ Update total order price
+                //  Update total order price
                 string updateSql = "UPDATE Orders SET TotalPrice = @Total WHERE OrderId = @OrderId";
                 using var updateCmd = new SqlCommand(updateSql, conn, tx);
                 updateCmd.Parameters.AddWithValue("@Total", totalOrderPrice);

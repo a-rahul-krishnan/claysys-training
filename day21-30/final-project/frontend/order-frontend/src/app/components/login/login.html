@@ -5,7 +5,9 @@
       <span class="logo-your">Your</span>
       <span class="logo-cloth">Cloth</span>
     </h1>
+
     <h2>Admin Login</h2>
+
     <form (ngSubmit)="onLogin()">
       <div class="form-group">
         <label for="username">Username</label>
@@ -18,6 +20,7 @@
           placeholder="Enter username"
         />
       </div>
+
       <div class="form-group">
         <label for="password">Password</label>
         <input 
@@ -29,11 +32,16 @@
           placeholder="Enter password"
         />
       </div>
-      <div class="error-message" *ngIf="errorMessage">
-        {{ errorMessage }}
-      </div>
+
+      @if (errorMessage) {
+        <div class="error-message">
+          {{ errorMessage }}
+        </div>
+      }
+
       <button type="submit" class="btn-login">Login</button>
     </form>
+
     <p class="hint">Hint: username: admin, password: admin123</p>
   </div>
 </div>

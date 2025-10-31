@@ -3,8 +3,8 @@
   
   <div class="main">
     <app-header 
-      [pageTitle]="'Orders'" 
-      [searchQuery]="searchQuery" 
+      [pageTitle]="'Orders'"
+      [searchQuery]="searchQuery"
       (searchChange)="searchQuery = $event; onSearchChange()">
     </app-header>
     
@@ -13,6 +13,7 @@
         <h3>Pickup</h3>
         <p>{{ filteredOrders.length }} Orders - {{ currentTime | date:'shortTime' }}</p>
       </div>
+
       <div class="filter-container">
         <select name="filter" id="filter">
           <option value="Pickups">Pickups</option>
@@ -21,138 +22,157 @@
     </div>
 
     <div class="card-container">
-      <div *ngFor="let order of filteredOrders" [ngClass]="getCardClass(order.status)">
-        
-        <!-- Order Header -->
-        <table class="table-info">
-          <!-- Only show header when order is expanded -->
-          <thead *ngIf="expandedOrderId === order.orderId">
-            <tr>
-              <th>Order Id</th>
-              <th>Customer</th>
-              <th>Date</th>
-              <th>Price</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>#{{ order.orderId }}</td>
-              <td>{{ order.customerName }}</td>
-              <td>{{ formatDate(order.orderDate) }}</td>
-              <td>£{{ order.totalPrice.toFixed(2) }}</td>
-              <td>
-                <span [ngClass]="getStatusClass(order.status)">{{ order.status }}</span>
-              </td>
-              <td>
-                <div class="action-buttons">
-                  <div class="dropdown">
-                    <i class='bx bxs-cog dropbtn'></i>
-                    <div class="dropdown-content">
-                      <a (click)="openEditModal(order); $event.stopPropagation()">
-                        Update <i class='bx bx-edit'></i>
-                      </a>
-                      <a (click)="onDeleteOrder(order.orderId!); $event.stopPropagation()">
-                        Delete <i class='bx bx-trash'></i>
-                      </a>
-                    </div>
-                  </div>
-                  <i 
-                    class='bx chevron-icon' 
-                    [ngClass]="expandedOrderId === order.orderId ? 'bx-chevron-up' : 'bx-chevron-down'"
-                    (click)="toggleOrderDetails(order.orderId!)"
-                  ></i>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
 
-        <!-- Order Details (Expanded) -->
-        <div *ngIf="expandedOrderId === order.orderId" class="order-details-section">
-          <h3>Order Details</h3>
+      @for (order of filteredOrders; track order.orderId) {
+        <div [ngClass]="getCardClass(order.status)">
           
-          <div class="main-table">
-            <table class="table-content">
+          <!-- Order Header -->
+          <table class="table-info">
+            @if (expandedOrderId === order.orderId) {
               <thead>
                 <tr>
-                  <th>Sn</th>
-                  <th>Product Name</th>
-                  <th>Quantity</th>
+                  <th>Order Id</th>
+                  <th>Customer</th>
+                  <th>Date</th>
                   <th>Price</th>
-                  <th>Total Price</th>
+                  <th>Status</th>
+                  <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr *ngFor="let item of order.orderItems; let i = index">
-                  <td>{{ i + 1 }}.</td>
-                  <td>{{ item.productName }}</td>
-                  <td>{{ item.quantity }} pic</td>
-                  <td>£{{ item.price.toFixed(2) }}</td>
-                  <td>£{{ item.totalPrice?.toFixed(2) }}</td>
-                </tr>
-                <tr id="total-price-row">
-                  <td></td>
-                  <td>Total Price</td>
-                  <td></td>
-                  <td></td>
-                  <td>£{{ order.totalPrice.toFixed(2) }}</td>
-                </tr>
-              </tbody>
-            </table>
+            }
 
-            <div class="table-button" *ngIf="order.status === 'Pending'">
-              <div>
-                <button id="cancel" (click)="onCancelOrder(order.orderId!)">
-                  Cancel order
-                </button>
-                <button id="accept" (click)="onAcceptOrder(order.orderId!)">
-                  Accept for pickup
-                </button>
+            <tbody>
+              <tr>
+                <td>#{{ order.orderId }}</td>
+                <td>{{ order.customerName }}</td>
+                <td>{{ formatDate(order.orderDate) }}</td>
+                <td>£{{ order.totalPrice.toFixed(2) }}</td>
+                <td>
+                  <span [ngClass]="getStatusClass(order.status)">
+                    {{ order.status }}
+                  </span>
+                </td>
+                <td>
+                  <div class="action-buttons">
+                    <div class="dropdown">
+                      <i class='bx bxs-cog dropbtn'></i>
+                      <div class="dropdown-content">
+                        <a (click)="openEditModal(order); $event.stopPropagation()">
+                          Update <i class='bx bx-edit'></i>
+                        </a>
+                        <a (click)="onDeleteOrder(order.orderId!); $event.stopPropagation()">
+                          Delete <i class='bx bx-trash'></i>
+                        </a>
+                      </div>
+                    </div>
+                    <i 
+                      class='bx chevron-icon' 
+                      [ngClass]="expandedOrderId === order.orderId ? 'bx-chevron-up' : 'bx-chevron-down'"
+                      (click)="toggleOrderDetails(order.orderId!)">
+                    </i>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Order Details (Expanded) -->
+          @if (expandedOrderId === order.orderId) {
+            <div class="order-details-section">
+              <h3>Order Details</h3>
+              
+              <div class="main-table">
+                <table class="table-content">
+                  <thead>
+                    <tr>
+                      <th>Sn</th>
+                      <th>Product Name</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th>Total Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (item of order.orderItems; track $index) {
+                      <tr>
+                        <td>{{ $index + 1 }}.</td>
+                        <td>{{ item.productName }}</td>
+                        <td>{{ item.quantity }} pic</td>
+                        <td>£{{ item.price.toFixed(2) }}</td>
+                        <td>£{{ item.totalPrice?.toFixed(2) }}</td>
+                      </tr>
+                    }
+                    <tr id="total-price-row">
+                      <td></td>
+                      <td>Total Price</td>
+                      <td></td>
+                      <td></td>
+                      <td>£{{ order.totalPrice.toFixed(2) }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                @if (order.status === 'Pending') {
+                  <div class="table-button">
+                    <div>
+                      <button id="cancel" (click)="onCancelOrder(order.orderId!)">
+                        Cancel order
+                      </button>
+                      <button id="accept" (click)="onAcceptOrder(order.orderId!)">
+                        Accept for pickup
+                      </button>
+                    </div>
+                  </div>
+                }
               </div>
             </div>
-          </div>
+          }
         </div>
+      }
 
-      </div>
-
-      <div *ngIf="filteredOrders.length === 0" class="no-results">
-        No orders found for "{{ searchQuery }}"
-      </div>
+      @if (filteredOrders.length === 0) {
+        <div class="no-results">
+          No orders found for "{{ searchQuery }}"
+        </div>
+      }
     </div>
   </div>
 </div>
 
 <!-- Edit Modal -->
-<div class="modal-overlay" *ngIf="showEditModal" (click)="closeEditModal()">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <div class="modal-header">
-      <h2>Edit Order</h2>
-      <i class='bx bx-x' (click)="closeEditModal()"></i>
-    </div>
-    <div class="modal-body">
-      <div class="form-group">
-        <label for="editCustomerName">Customer Name</label>
-        <input 
-          type="text" 
-          id="editCustomerName" 
-          [(ngModel)]="editCustomerName"
-          placeholder="Enter customer name"
-        />
+@if (showEditModal) {
+  <div class="modal-overlay" (click)="closeEditModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h2>Edit Order</h2>
+        <i class='bx bx-x' (click)="closeEditModal()"></i>
       </div>
-      <div class="form-group">
-        <label for="editOrderDate">Order Date</label>
-        <input 
-          type="date" 
-          id="editOrderDate" 
-          [(ngModel)]="editOrderDate"
-        />
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="editCustomerName">Customer Name</label>
+          <input 
+            type="text" 
+            id="editCustomerName" 
+            [(ngModel)]="editCustomerName"
+            placeholder="Enter customer name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="editOrderDate">Order Date</label>
+          <input 
+            type="date" 
+            id="editOrderDate" 
+            [(ngModel)]="editOrderDate"
+          />
+        </div>
       </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-cancel" (click)="closeEditModal()">Cancel</button>
-      <button class="btn-save" (click)="onUpdateOrder()">Save Changes</button>
+
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="closeEditModal()">Cancel</button>
+        <button class="btn-save" (click)="onUpdateOrder()">Save Changes</button>
+      </div>
     </div>
   </div>
-</div>
+}

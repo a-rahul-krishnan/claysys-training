@@ -12,6 +12,7 @@ import { Order } from '../../models/order';
   templateUrl: './orders.html',
   styleUrl: './orders.css',
 })
+
 export class Orders implements OnInit{
   orders: Order[] = [];
   filteredOrders: Order[] = [];

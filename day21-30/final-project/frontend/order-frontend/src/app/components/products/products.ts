@@ -13,7 +13,6 @@ import { Product } from '../../models/product';
 })
 export class Products implements OnInit {
    products: Product[] = [];
-  loading = true;
 
   constructor(private productService: ProductService) {}
 
@@ -22,16 +21,13 @@ export class Products implements OnInit {
   }
 
   loadProducts(): void {
-    this.loading = true;
     this.productService.getProducts().subscribe({
       next: (data) => {
         this.products = data;
-        this.loading = false;
       },
       error: (err) => {
         console.error('Error loading products:', err);
         alert('Failed to load products');
-        this.loading = false;
       }
     });
   }

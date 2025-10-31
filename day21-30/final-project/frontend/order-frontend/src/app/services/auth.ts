@@ -5,8 +5,9 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
-   private readonly USERNAME = 'admin';
+  private readonly USERNAME = 'admin';
   private readonly PASSWORD = 'admin123';
   private readonly AUTH_KEY = 'isAuthenticated';
 

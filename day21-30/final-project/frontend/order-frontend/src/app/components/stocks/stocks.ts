@@ -16,7 +16,6 @@ export class Stocks implements OnInit {
  products: Product[] = [];
   filteredProducts: Product[] = [];
   searchQuery = '';
-  loading = true;
 
   constructor(private productService: ProductService) {}
 
@@ -25,17 +24,14 @@ export class Stocks implements OnInit {
   }
 
   loadProducts(): void {
-    this.loading = true;
     this.productService.getProducts().subscribe({
       next: (data) => {
         this.products = data;
         this.filteredProducts = data;
-        this.loading = false;
       },
       error: (err) => {
         console.error('Error loading products:', err);
         alert('Failed to load stock information');
-        this.loading = false;
       }
     });
   }
@@ -50,20 +46,6 @@ export class Stocks implements OnInit {
         p.productId.toString().includes(query)
       );
     }
-  }
-
-  getStockStatus(stock: number): string {
-    if (stock === 0) return 'out-of-stock';
-    if (stock < 30) return 'low-stock';
-    if (stock < 70) return 'medium-stock';
-    return 'high-stock';
-  }
-
-  getStockLabel(stock: number): string {
-    if (stock === 0) return 'Out of Stock';
-    if (stock < 30) return 'Low Stock';
-    if (stock < 70) return 'Medium Stock';
-    return 'In Stock';
   }
 
   refreshStock(): void {

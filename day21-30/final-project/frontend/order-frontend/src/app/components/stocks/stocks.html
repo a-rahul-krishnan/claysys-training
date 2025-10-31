@@ -12,19 +12,13 @@
       <div class="section-header">
         <div>
           <h2>Stock Management</h2>
-          <p>Monitor product inventory levels</p>
         </div>
         <button class="btn-refresh" (click)="refreshStock()">
           <i class='bx bx-refresh'></i> Refresh
         </button>
       </div>
 
-      <div *ngIf="loading" class="loading">
-        <div class="spinner"></div>
-        <p>Loading stock information...</p>
-      </div>
-
-      <div *ngIf="!loading" class="stock-table-card">
+      <div class="stock-table-card">
         <table class="stock-table">
           <thead>
             <tr>
@@ -35,25 +29,28 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let product of filteredProducts">
-              <td>#{{ product.productId }}</td>
-              <td>{{ product.name }}</td>
-              <td class="price-cell">£{{ product.price.toFixed(2) }}</td>
-              <td class="stock-quantity">
-                <div class="quantity-display">
-                  <i class='bx bx-package'></i>
-                  <span>{{ product.stock }} units</span>
-                </div>
-              </td>
-              
-            </tr>
+            @for (product of filteredProducts; track product.productId) {
+              <tr>
+                <td>#{{ product.productId }}</td>
+                <td>{{ product.name }}</td>
+                <td class="price-cell">£{{ product.price.toFixed(2) }}</td>
+                <td class="stock-quantity">
+                  <div class="quantity-display">
+                    <i class='bx bx-package'></i>
+                    <span>{{ product.stock }} units</span>
+                  </div>
+                </td>
+              </tr>
+            }
           </tbody>
         </table>
 
-        <div *ngIf="filteredProducts.length === 0" class="no-products">
-          No products found for "{{ searchQuery }}"
-        </div>
+        @if (filteredProducts.length === 0) {
+          <div class="no-products">
+            No products found for "{{ searchQuery }}"
+          </div>
+        }
       </div>
-
+    </div>
   </div>
 </div>

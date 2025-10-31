@@ -7,15 +7,10 @@
     <div class="content">
       <div class="section-header">
         <h2>Order Statistics</h2>
-        <p>Overview of all orders and their statuses</p>
       </div>
 
-      <div *ngIf="loading" class="loading">
-        <div class="spinner"></div>
-        <p>Loading statistics...</p>
-      </div>
 
-      <div *ngIf="!loading" class="stats-grid">
+      <div class="stats-grid">
         <div class="stat-card total-card">
           <div class="stat-icon">
             <i class='bx bx-shopping-bag'></i>

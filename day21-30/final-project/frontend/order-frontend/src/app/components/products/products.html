@@ -7,15 +7,9 @@
     <div class="content">
       <div class="section-header">
         <h2>Product List</h2>
-        <p>All available products in the system</p>
       </div>
-
-      <div *ngIf="loading" class="loading">
-        <div class="spinner"></div>
-        <p>Loading products...</p>
-      </div>
-
-      <div *ngIf="!loading" class="product-table-card">
+      
+      <div class="product-table-card">
         <table class="product-table">
           <thead>
             <tr>
@@ -25,17 +19,21 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let product of products">
-              <td>#{{ product.productId }}</td>
-              <td>{{ product.name }}</td>
-              <td class="price-cell">£{{ product.price.toFixed(2) }}</td>
-            </tr>
+            @for (product of products; track product.productId) {
+              <tr>
+                <td>#{{ product.productId }}</td>
+                <td>{{ product.name }}</td>
+                <td class="price-cell">£{{ product.price.toFixed(2) }}</td>
+              </tr>
+            }
           </tbody>
         </table>
 
-        <div *ngIf="products.length === 0" class="no-products">
-          No products available
-        </div>
+        @if (products.length === 0) {
+          <div class="no-products">
+            No products available
+          </div>
+        }
       </div>
     </div>
   </div>

@@ -1,21 +1,4 @@
-.page-container {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 16% 84%;
-  gap: 1rem;
-  padding: 1rem;
-}
 
-.main {
-  border-radius: 20px;
-  background-color: rgba(229, 248, 255);
-  padding: 1.5rem;
-  overflow-y: auto;
-}
-
-.content {
-  padding: 1rem;
-}
 
 .section-header {
   margin-bottom: 2rem;
@@ -123,10 +106,6 @@
 }
 
 @media (max-width: 768px) {
-  .page-container {
-    grid-template-columns: 1fr;
-  }
-  
   .stats-grid {
     grid-template-columns: 1fr;
   }

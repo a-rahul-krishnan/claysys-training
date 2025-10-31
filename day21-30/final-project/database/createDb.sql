@@ -1,6 +1,7 @@
-------------------------------------------------------------
+
+-- Database: order-management
 -- TABLE: Products
-------------------------------------------------------------
+
 CREATE TABLE Products (
     ProductId INT IDENTITY(1,1) PRIMARY KEY,
     Name NVARCHAR(100) NOT NULL,
@@ -9,9 +10,8 @@ CREATE TABLE Products (
 );
 GO
 
-------------------------------------------------------------
 -- TABLE: Orders
-------------------------------------------------------------
+
 CREATE TABLE Orders (
     OrderId INT IDENTITY(1,1) PRIMARY KEY,
     CustomerName NVARCHAR(100) NOT NULL,
@@ -34,9 +34,8 @@ CREATE TABLE OrderItems (
 );
 GO
 
-------------------------------------------------------------
--- POPULATE Products (20 records)
-------------------------------------------------------------
+-- POPULATE Products
+
 INSERT INTO Products (Name, Price, Stock) VALUES
 ('Cheese Stack', 2.00, 120),
 ('Greek Style Salad', 4.00, 80),

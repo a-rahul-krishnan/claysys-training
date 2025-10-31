@@ -54,10 +54,4 @@ export class Offers {
     }
   ];
 
-  copyCoupon(couponCode: string): void {
-    navigator.clipboard.writeText(couponCode).then(() => {
-      alert(`Coupon code "${couponCode}" copied to clipboard!`);
-    });
-  }
-
 }

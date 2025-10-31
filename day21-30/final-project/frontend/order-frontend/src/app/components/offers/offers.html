@@ -7,17 +7,19 @@
     <div class="content">
       <div class="section-header">
         <h2>Available Offers</h2>
-
       </div>
 
       <div class="offers-grid">
-        <div class="offer-card" *ngFor="let offer of offers" [style.border-color]="offer.color">
-          <div class="offer-header" [style.background-color]="offer.color">
-            <h3>{{ offer.title }}</h3>
+        @for (offer of offers; track offer.couponCode) {
+          <div class="offer-card" [style.border-color]="offer.color">
+            <div class="offer-header" [style.background-color]="offer.color">
+              <h3>{{ offer.title }}</h3>
+            </div>
+            <div class="offer-body">
+              CODE: <span>{{ offer.couponCode }}</span>
+            </div>
           </div>
-          <div class="offer-body">
-              CODE: <span>{{ offer.couponCode }}</span> 
-        </div>
+        }
       </div>
     </div>
   </div>

@@ -20,6 +20,7 @@ interface Coupon {
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
+
 export class Dashboard implements OnInit{
  products: Product[] = [];
   filteredProducts: Product[] = [];
@@ -84,21 +85,7 @@ export class Dashboard implements OnInit{
     }
   }
 
-  applyCoupon(): void {
-    const coupon = this.coupons.find(c => c.code === this.couponCode.toUpperCase());
-    if (coupon) {
-      this.appliedDiscount = coupon.discount;
-      this.successMessage = `Coupon "${coupon.code}" applied! You got ${coupon.discount}% discount.`;
-      this.errorMessage = '';
-      this.clearMessagesAfterDelay();
-    } else {
-      this.appliedDiscount = 0;
-      this.errorMessage = 'Invalid coupon code!';
-      this.successMessage = '';
-      this.clearMessagesAfterDelay();
-    }
-  }
-
+  
   removeCoupon(): void {
     this.couponCode = '';
     this.appliedDiscount = 0;
@@ -135,29 +122,33 @@ export class Dashboard implements OnInit{
   }
 }
 
+applyCoupon(): void {
+  const coupon = this.coupons.find(c => c.code === this.couponCode.toUpperCase());
+  if (coupon) {
+    this.appliedDiscount = coupon.discount;
+    alert(`Coupon "${coupon.code}" applied! You got ${coupon.discount}% discount.`);
+  } else {
+    this.appliedDiscount = 0;
+    alert('Invalid coupon code!');
+  }
+}
+
 onSubmitOrder(): void {
   if (!this.customerName.trim()) {
-    this.errorMessage = 'Please enter customer name';
-    this.successMessage = '';
-    this.clearMessagesAfterDelay();
+    alert('Please enter customer name');
     return;
   }
 
   const selectedItems = this.orderItems.filter(item => item.quantity > 0);
   if (selectedItems.length === 0) {
-    this.errorMessage = 'Please select at least one product';
-    this.successMessage = '';
-    this.clearMessagesAfterDelay();
+    alert('Please select at least one product');
     return;
   }
 
-  // Check stock availability
   for (const item of selectedItems) {
     const product = this.products.find(p => p.productId === item.productId);
     if (product && item.quantity > product.stock) {
-      this.errorMessage = `Insufficient stock for ${product.name}. Available: ${product.stock}`;
-      this.successMessage = '';
-      this.clearMessagesAfterDelay();
+      alert(`Insufficient stock for ${product.name}. Available: ${product.stock}`);
       return;
     }
   }
@@ -172,20 +163,17 @@ onSubmitOrder(): void {
 
   this.orderService.createOrder(order).subscribe({
     next: (response) => {
-      this.successMessage = `Order created successfully! Order ID: ${response.orderId}. Final Amount: £${this.getFinalPrice().toFixed(2)}`;
-      this.errorMessage = '';
+      alert(`Order created successfully! Order ID: ${response.orderId}. Final Amount: £${this.getFinalPrice().toFixed(2)}`);
       this.resetForm();
-      this.loadProducts(); // Reload to get updated stock
-      this.clearMessagesAfterDelay();
+      this.loadProducts();
     },
     error: (err) => {
       console.error('Error creating order:', err);
-      this.errorMessage = err.error?.message || 'Failed to create order. Please try again.';
-      this.successMessage = '';
-      this.clearMessagesAfterDelay();
+      alert(err.error?.message || 'Failed to create order. Please try again.');
     }
   });
 }
+
 
   resetForm(): void {
     this.customerName = '';

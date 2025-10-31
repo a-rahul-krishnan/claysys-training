@@ -1,21 +1,3 @@
-.page-container {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 16% 84%;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-.main {
-  border-radius: 20px;
-  background-color: rgba(229, 248, 255);
-  padding: 1.5rem;
-  overflow-y: auto;
-}
-
-.content {
-  padding: 1rem;
-}
 
 .section-header {
   display: flex;
@@ -45,7 +27,7 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .btn-refresh:hover {
@@ -56,30 +38,6 @@
   font-size: 1.2rem;
 }
 
-.loading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem;
-  background: white;
-  border-radius: 10px;
-}
-
-.spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #00afff;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 
 .stock-table-card {
   background: white;
@@ -139,94 +97,9 @@
   color: #666;
 }
 
-.stock-badge {
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  display: inline-block;
-}
 
-.high-stock {
-  background: #d4edda;
-  color: #155724;
-}
-
-.medium-stock {
-  background: #fff3cd;
-  color: #856404;
-}
-
-.low-stock {
-  background: #f8d7da;
-  color: #721c24;
-}
-
-.out-of-stock {
-  background: #6c757d;
-  color: white;
-}
-
-.no-products {
-  padding: 2rem;
-  text-align: center;
-  color: #666;
-}
-
-/* Stock Summary Cards */
-.stock-summary {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.summary-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.summary-card i {
-  font-size: 2.5rem;
-}
-
-.high-stock-card i {
-  color: #70b873;
-}
-
-.medium-stock-card i {
-  color: #ffa500;
-}
-
-.low-stock-card i {
-  color: #dc3545;
-}
-
-.out-stock-card i {
-  color: #6c757d;
-}
-
-.summary-info h4 {
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.summary-info p {
-  margin: 0.25rem 0 0 0;
-  color: #666;
-  font-size: 0.9rem;
-}
 
 @media (max-width: 768px) {
-  .page-container {
-    grid-template-columns: 1fr;
-  }
 
   .section-header {
     flex-direction: column;
@@ -245,7 +118,4 @@
     font-size: 0.9rem;
   }
 
-  .stock-summary {
-    grid-template-columns: 1fr;
-  }
 }
