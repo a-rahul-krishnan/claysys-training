@@ -1,16 +1,14 @@
 ﻿var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<OrderManagementAPI.Data.DatabaseHelper>();
 
 
-// ✅ Add CORS Policy
+// Add CORS Policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
