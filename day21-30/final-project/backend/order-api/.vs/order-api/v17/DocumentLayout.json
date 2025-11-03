@@ -1,81 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\",
   "Documents": [
     {
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\a rahul krishnan\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:order-api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\administrator\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> Stashed changes
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\a rahul krishnan\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\a rahul krishnan\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\a rahul krishnan\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\a rahul krishnan\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\a rahul krishnan\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\a rahul krishnan\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\a rahul krishnan\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-<<<<<<< Updated upstream
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|c:\\users\\a rahul krishnan\\desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6597DA56-7E3C-4B79-A31F-3E92D02ACBA5}|order-api.csproj|solutionrelative:order-api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-=======
->>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -85,242 +46,120 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< Updated upstream
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "Controllers\\ProductsController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAwA0AAAANAAAAAAAAAA==",
-=======
-          "SelectedChildIndex": 7,
-          "Children": [
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:36:13.749Z"
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:36:13.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Data\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "Data\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Data\\DatabaseHelper.cs",
+              "RelativeToolTip": "Data\\DatabaseHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:36:13.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-03T11:36:13.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAUwOcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:36:13.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Models\\Product.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\Product.cs",
               "RelativeToolTip": "Models\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
->>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T11:48:42.148Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-<<<<<<< Updated upstream
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T09:53:09.989Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Data\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "Data\\DatabaseHelper.cs",
-              "ToolTip": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Data\\DatabaseHelper.cs",
-              "RelativeToolTip": "Data\\DatabaseHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T09:50:22.183Z",
-=======
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T07:41:27.564Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Services\\ProductService.cs",
-              "RelativeToolTip": "Services\\ProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T09:46:51.972Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Services\\OrderService.cs",
-              "RelativeDocumentMoniker": "Services\\OrderService.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Services\\OrderService.cs",
-              "RelativeToolTip": "Services\\OrderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T09:46:32.986Z"
+              "WhenOpened": "2025-11-03T11:36:13.913Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Repositories\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\ProductRepository.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Repositories\\ProductRepository.cs",
-              "RelativeToolTip": "Repositories\\ProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T09:46:00.078Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Repositories\\OrderRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\OrderRepository.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Repositories\\OrderRepository.cs",
-              "RelativeToolTip": "Repositories\\OrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK4AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T09:45:44.335Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrdersController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\OrdersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\OrdersController.cs",
-              "RelativeToolTip": "Controllers\\OrdersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T10:11:55.187Z",
->>>>>>> Stashed changes
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-27T09:52:35.122Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 3,
-              "Title": "OrdersController.cs",
-              "DocumentMoniker": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\OrdersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
-              "ToolTip": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Controllers\\OrdersController.cs",
-              "RelativeToolTip": "Controllers\\OrdersController.cs",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAUwOcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T10:11:55.187Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Models\\Product.cs",
-              "ToolTip": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\Product.cs",
-              "RelativeToolTip": "Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T11:48:42.148Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-=======
-              "DocumentIndex": 11,
->>>>>>> Stashed changes
               "Title": "OrderItem.cs",
-              "DocumentMoniker": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\OrderItem.cs",
               "RelativeDocumentMoniker": "Models\\OrderItem.cs",
-              "ToolTip": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\OrderItem.cs",
               "RelativeToolTip": "Models\\OrderItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T11:49:22.713Z"
+              "WhenOpened": "2025-11-03T11:36:13.915Z"
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 7,
-=======
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T09:53:09.989Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
->>>>>>> Stashed changes
               "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\Order.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\Order.cs",
               "RelativeDocumentMoniker": "Models\\Order.cs",
-              "ToolTip": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Models\\Order.cs",
               "RelativeToolTip": "Models\\Order.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T09:51:31.291Z"
+              "WhenOpened": "2025-11-03T11:36:13.917Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-<<<<<<< Updated upstream
-=======
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Data\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "Data\\DatabaseHelper.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\Data\\DatabaseHelper.cs",
-              "RelativeToolTip": "Data\\DatabaseHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T09:50:22.183Z"
+              "Title": "order-api.csproj",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj",
+              "RelativeDocumentMoniker": "order-api.csproj",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj",
+              "RelativeToolTip": "order-api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-03T11:36:13.922Z"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 7,
->>>>>>> Stashed changes
-              "Title": "order-api.csproj",
-              "DocumentMoniker": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj",
-              "RelativeDocumentMoniker": "order-api.csproj",
-              "ToolTip": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj",
-              "RelativeToolTip": "order-api.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-27T09:48:49.149Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             }
           ]
         }
