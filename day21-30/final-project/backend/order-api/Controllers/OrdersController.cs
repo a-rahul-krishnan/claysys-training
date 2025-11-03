@@ -16,8 +16,7 @@ namespace OrderManagementAPI.Controllers
             _db = db;
         }
 
-
-        // ✅ POST /api/Orders
+        //  POST /api/Orders
         [HttpPost]
         public IActionResult CreateOrder([FromBody] Order order)
         {
@@ -106,7 +105,7 @@ namespace OrderManagementAPI.Controllers
             }
         }
 
-        // ✅ GET /api/Orders
+        //  GET /api/Orders
         [HttpGet]
         public IActionResult GetAllOrders()
         {
@@ -164,7 +163,7 @@ namespace OrderManagementAPI.Controllers
             return Ok(orders);
         }
 
-        // ✅ PUT /api/Orders/{id}
+        //  PUT /api/Orders/{id}
         [HttpPut("{id}")]
         public IActionResult UpdateOrder(int id, [FromBody] Order order)
         {
@@ -189,7 +188,7 @@ namespace OrderManagementAPI.Controllers
         }
 
 
-        // ✅ PATCH /api/Orders/{id}/{status}
+        //  PATCH /api/Orders/{id}/{status}
         [HttpPatch("{id}/{status}")]
         public IActionResult UpdateStatus(int id, string status)
         {
@@ -211,7 +210,7 @@ namespace OrderManagementAPI.Controllers
                 : NotFound($"Order {id} not found.");
         }
 
-        // ✅ DELETE /api/Orders/{id}
+        //  DELETE /api/Orders/{id}
         [HttpDelete("{id}")]
         public IActionResult DeleteOrder(int id)
         {

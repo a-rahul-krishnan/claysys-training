@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj": {}
+    "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj": {
+    "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj",
+        "projectUniqueName": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj",
         "projectName": "order-api",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\obj\\",
+        "projectPath": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj",
+        "packagesPath": "C:\\Users\\A RAHUL KRISHNAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\A RAHUL KRISHNAN\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\A RAHUL KRISHNAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -92,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
