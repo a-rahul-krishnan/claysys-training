@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OrderManagementAPI.Data;
 using OrderManagementAPI.Models;
-using System.Data.SqlClient;
+using OrderManagementAPI.Services;
 
 namespace OrderManagementAPI.Controllers
 {
@@ -9,110 +8,36 @@ namespace OrderManagementAPI.Controllers
     [Route("api/[controller]")]
     public class OrdersController : ControllerBase
     {
-        private readonly DatabaseHelper _db;
+        private readonly OrderService _service;
+        public OrdersController(OrderService service) => _service = service;
 
+<<<<<<< Updated upstream
         public OrdersController(DatabaseHelper db)
         {
             _db = db;
         }
 
         //  POST /api/Orders
+=======
+>>>>>>> Stashed changes
         [HttpPost]
         public IActionResult CreateOrder([FromBody] Order order)
         {
-            if (order.OrderItems == null || order.OrderItems.Count == 0)
-                return BadRequest("Order must contain at least one item.");
-
-            using var conn = _db.GetConnection();
-            conn.Open();
-            SqlTransaction tx = conn.BeginTransaction();
-
-            try
-            {
-                decimal totalOrderPrice = 0;
-
-                // 1️ Check stock availability for all items first
-                foreach (var item in order.OrderItems)
-                {
-                    string stockCheckSql = "SELECT Stock FROM Products WHERE ProductId = @pid";
-                    using var stockCmd = new SqlCommand(stockCheckSql, conn, tx);
-                    stockCmd.Parameters.AddWithValue("@pid", item.ProductId);
-                    var stockResult = stockCmd.ExecuteScalar();
-
-                    if (stockResult == null)
-                        throw new Exception($"Product not found: {item.ProductId}");
-
-                    int availableStock = (int)stockResult;
-                    if (availableStock < item.Quantity)
-                        throw new Exception($"Insufficient stock for product {item.ProductId}. Available: {availableStock}, Required: {item.Quantity}");
-                }
-
-                //  Insert order (default: Pending, OrderDate = GETDATE())
-                string orderSql = "INSERT INTO Orders (CustomerName) OUTPUT INSERTED.OrderId VALUES (@CustomerName)";
-                using var orderCmd = new SqlCommand(orderSql, conn, tx);
-                orderCmd.Parameters.AddWithValue("@CustomerName", order.CustomerName);
-                int orderId = (int)orderCmd.ExecuteScalar();
-
-                //  Insert order items, compute total, and reduce stock
-                foreach (var item in order.OrderItems)
-                {
-                    // Get product price
-                    string priceQuery = "SELECT Price FROM Products WHERE ProductId = @pid";
-                    using var priceCmd = new SqlCommand(priceQuery, conn, tx);
-                    priceCmd.Parameters.AddWithValue("@pid", item.ProductId);
-                    var result = priceCmd.ExecuteScalar();
-
-                    if (result == null)
-                        throw new Exception($"Invalid ProductId: {item.ProductId}");
-
-                    decimal price = (decimal)result;
-                    decimal itemTotal = price * item.Quantity;
-                    totalOrderPrice += itemTotal;
-
-                    // Insert order item
-                    string insertItemSql = @"
-                INSERT INTO OrderItems (OrderId, ProductId, Quantity, Price)
-                VALUES (@OrderId, @ProductId, @Quantity, @Price)";
-                    using var itemCmd = new SqlCommand(insertItemSql, conn, tx);
-                    itemCmd.Parameters.AddWithValue("@OrderId", orderId);
-                    itemCmd.Parameters.AddWithValue("@ProductId", item.ProductId);
-                    itemCmd.Parameters.AddWithValue("@Quantity", item.Quantity);
-                    itemCmd.Parameters.AddWithValue("@Price", price);
-                    itemCmd.ExecuteNonQuery();
-
-                    // Reduce stock
-                    string updateStockSql = "UPDATE Products SET Stock = Stock - @Quantity WHERE ProductId = @ProductId";
-                    using var stockCmd = new SqlCommand(updateStockSql, conn, tx);
-                    stockCmd.Parameters.AddWithValue("@Quantity", item.Quantity);
-                    stockCmd.Parameters.AddWithValue("@ProductId", item.ProductId);
-                    stockCmd.ExecuteNonQuery();
-                }
-
-                //  Update total order price
-                string updateSql = "UPDATE Orders SET TotalPrice = @Total WHERE OrderId = @OrderId";
-                using var updateCmd = new SqlCommand(updateSql, conn, tx);
-                updateCmd.Parameters.AddWithValue("@Total", totalOrderPrice);
-                updateCmd.Parameters.AddWithValue("@OrderId", orderId);
-                updateCmd.ExecuteNonQuery();
-
-                tx.Commit();
-                return Ok(new { message = "Order created successfully", orderId });
-            }
-            catch (Exception ex)
-            {
-                tx.Rollback();
-                return StatusCode(500, new { message = ex.Message });
-            }
+            var result = _service.CreateOrder(order);
+            if (!result.success)
+                return BadRequest(new { message = result.message });
+            return Ok(new { message = result.message, orderId = result.orderId });
         }
 
+<<<<<<< Updated upstream
         //  GET /api/Orders
+=======
+>>>>>>> Stashed changes
         [HttpGet]
         public IActionResult GetAllOrders()
-        {
-            List<Order> orders = new();
-            using var conn = _db.GetConnection();
-            conn.Open();
+            => Ok(_service.GetAllOrders());
 
+<<<<<<< Updated upstream
             string sql = "SELECT * FROM Orders ORDER BY OrderId DESC";
             using var cmd = new SqlCommand(sql, conn);
             using var reader = cmd.ExecuteReader();
@@ -164,31 +89,22 @@ namespace OrderManagementAPI.Controllers
         }
 
         //  PUT /api/Orders/{id}
+=======
+>>>>>>> Stashed changes
         [HttpPut("{id}")]
         public IActionResult UpdateOrder(int id, [FromBody] Order order)
         {
-            if (order == null)
-                return BadRequest(new { message = "Invalid order data." });
-
-            using var conn = _db.GetConnection();
-            conn.Open();
-
-            string sql = @"UPDATE Orders 
-                   SET CustomerName = @CustomerName, OrderDate = @OrderDate
-                   WHERE OrderId = @OrderId";
-            using var cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@CustomerName", order.CustomerName);
-            cmd.Parameters.AddWithValue("@OrderDate", order.OrderDate);
-            cmd.Parameters.AddWithValue("@OrderId", id);
-
-            int rows = cmd.ExecuteNonQuery();
-            return rows > 0
-                ? Ok(new { message = "Order updated successfully", orderId = id })
-                : NotFound(new { message = "Order not found" });
+            var result = _service.UpdateOrder(id, order);
+            return result.success
+                ? Ok(new { message = result.message, orderId = id })
+                : NotFound(new { message = result.message });
         }
 
+<<<<<<< Updated upstream
 
         //  PATCH /api/Orders/{id}/{status}
+=======
+>>>>>>> Stashed changes
         [HttpPatch("{id}/{status}")]
         public IActionResult UpdateStatus(int id, string status)
         {
@@ -196,35 +112,23 @@ namespace OrderManagementAPI.Controllers
             if (!validStatuses.Contains(status, StringComparer.OrdinalIgnoreCase))
                 return BadRequest("Invalid status. Allowed: Pending, Completed, Failed.");
 
-            using var conn = _db.GetConnection();
-            conn.Open();
-
-            string sql = "UPDATE Orders SET Status = @Status WHERE OrderId = @OrderId";
-            using var cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@Status", status);
-            cmd.Parameters.AddWithValue("@OrderId", id);
-
-            int rows = cmd.ExecuteNonQuery();
-            return rows > 0
-                ? Ok(new { message = $"Order {id} status updated to {status}" })
-                : NotFound($"Order {id} not found.");
+            var result = _service.UpdateStatus(id, status);
+            return result.success
+                ? Ok(new { message = result.message })
+                : NotFound(result.message);
         }
 
+<<<<<<< Updated upstream
         //  DELETE /api/Orders/{id}
+=======
+>>>>>>> Stashed changes
         [HttpDelete("{id}")]
         public IActionResult DeleteOrder(int id)
         {
-            using var conn = _db.GetConnection();
-            conn.Open();
-
-            string sql = "DELETE FROM Orders WHERE OrderId = @OrderId";
-            using var cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@OrderId", id);
-
-            int rows = cmd.ExecuteNonQuery();
-            return rows > 0
-                ? Ok(new { message = $"Order {id} deleted successfully", orderId = id })
-                : NotFound(new { message = "Order not found" });
+            var result = _service.DeleteOrder(id);
+            return result.success
+                ? Ok(new { message = result.message, orderId = id })
+                : NotFound(new { message = result.message });
         }
     }
 }

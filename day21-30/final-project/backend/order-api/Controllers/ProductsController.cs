@@ -1,38 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OrderManagementAPI.Data;
-using OrderManagementAPI.Models;
-using System.Data.SqlClient;
+using OrderManagementAPI.Services;
 
-[ApiController]
-[Route("api/[controller]")]
-public class ProductsController : ControllerBase
+namespace OrderManagementAPI.Controllers
 {
-    private readonly DatabaseHelper _db;
-    public ProductsController(DatabaseHelper db) => _db = db;
-
-    // GET: api/Products
-    [HttpGet]
-    public IActionResult GetProducts()
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ProductsController : ControllerBase
     {
-        var products = new List<Product>();
-        using var conn = _db.GetConnection();
-        conn.Open();
+        private readonly ProductService _service;
+        public ProductsController(ProductService service) => _service = service;
 
-        using var cmd = new SqlCommand("SELECT ProductId, Name, Price, Stock FROM Products", conn);
-        using var reader = cmd.ExecuteReader();
-        while (reader.Read())
-        {
-            products.Add(new Product
-            {
-                ProductId = (int)reader["ProductId"],
-                Name = reader["Name"].ToString(),
-                Price = (decimal)reader["Price"],
-                Stock = (int)reader["Stock"]
-            });
-        }
-
-        return Ok(products);
+        [HttpGet]
+        public IActionResult GetProducts() => Ok(_service.GetProducts());
     }
-
 }
-

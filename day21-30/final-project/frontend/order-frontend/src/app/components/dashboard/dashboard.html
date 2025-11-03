@@ -1,13 +1,13 @@
 <div class="page-container">
   <app-sidebar></app-sidebar>
-  
+
   <div class="main">
     <app-header
       [pageTitle]="'Dashboard'"
       [searchQuery]="searchQuery"
       (searchChange)="searchQuery = $event; onSearchChange()">
     </app-header>
-    
+
     <div class="content" style="width: 100%;">
       <div class="section-header">
         <h2>Create New Order</h2>
@@ -16,16 +16,16 @@
       <div class="order-form-card">
         <div class="form-group">
           <label for="customerName">Customer Name</label>
-          <input 
-            type="text" 
-            id="customerName" 
-            [(ngModel)]="customerName" 
+          <input
+            type="text"
+            id="customerName"
+            [(ngModel)]="customerName"
             placeholder="Enter customer name"
           />
         </div>
 
         <h3>Select Products</h3>
-        
+
         <div class="products-table-container">
           <table class="products-table">
             <thead>
@@ -46,9 +46,9 @@
                   <td>£{{ product.price.toFixed(2) }}</td>
                   <td>{{ product.stock }} units</td>
                   <td>
-                    <input 
-                      type="number" 
-                      min="0" 
+                    <input
+                      type="number"
+                      min="0"
                       [max]="product.stock"
                       [value]="getQuantity(product.productId)"
                       (input)="setQuantity(product.productId, +$any($event.target).value)"
@@ -71,53 +71,11 @@
           }
         </div>
 
-        <!-- Coupon Section -->
-        <div class="coupon-section">
-          <h3>Apply Coupon Code</h3>
-          <div class="coupon-input-group">
-            <input 
-              type="text" 
-              [(ngModel)]="couponCode" 
-              placeholder="Enter coupon code (Eg. SAVE10)"
-              class="coupon-input"
-              [disabled]="appliedDiscount > 0"
-            />
-
-            @if (appliedDiscount === 0) {
-              <button 
-                class="btn-apply-coupon" 
-                (click)="applyCoupon()">
-                Apply
-              </button>
-            } @else {
-              <button 
-                class="btn-remove-coupon" 
-                (click)="removeCoupon()">
-                Remove
-              </button>
-            }
-          </div>
-        </div>
-
         <div class="order-summary">
           <div class="summary-details">
-            <div class="summary-row">
-              <span>Subtotal:</span>
-              <span>£{{ getTotalPrice().toFixed(2) }}</span>
-            </div>
-
-            @if (appliedDiscount > 0) {
-              <div class="summary-row">
-                <span>Discount ({{ appliedDiscount }}%):</span>
-                <span class="discount-amount">
-                  - £{{ getDiscountAmount().toFixed(2) }}
-                </span>
-              </div>
-            }
-
             <div class="summary-row total-row">
               <span>Total Amount:</span>
-              <span>£{{ getFinalPrice().toFixed(2) }}</span>
+              <span>£{{ getTotalPrice().toFixed(2) }}</span>
             </div>
           </div>
 

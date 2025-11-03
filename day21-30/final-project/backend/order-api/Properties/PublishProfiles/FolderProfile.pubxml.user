@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Administrator\Desktop\claysys-training\day21-30\final-project\backend\order-api\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2025-11-03T10:44:31.4828756Z||;True|2025-11-03T14:03:02.8494032+05:30||;True|2025-11-03T13:49:10.5510237+05:30||;True|2025-11-03T13:17:40.3721162+05:30||;True|2025-11-03T12:22:42.8171649+05:30||;True|2025-11-03T12:19:18.4834508+05:30||;True|2025-11-03T12:10:00.0708908+05:30||;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+</Project>

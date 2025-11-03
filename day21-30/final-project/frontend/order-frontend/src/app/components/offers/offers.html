@@ -1,22 +1,22 @@
 <div class="page-container">
   <app-sidebar></app-sidebar>
-  
+
   <div class="main">
     <app-header [pageTitle]="'Offers'"></app-header>
-    
+
     <div class="content">
       <div class="section-header">
-        <h2>Available Offers</h2>
+        <h2> Special Offers</h2>
       </div>
 
       <div class="offers-grid">
-        @for (offer of offers; track offer.couponCode) {
+        @for (offer of offers; track offer.id) {
           <div class="offer-card" [style.border-color]="offer.color">
             <div class="offer-header" [style.background-color]="offer.color">
-              <h3>{{ offer.title }}</h3>
+              <h3>{{ offer.days }}</h3>
             </div>
             <div class="offer-body">
-              CODE: <span>{{ offer.couponCode }}</span>
+              <p class="offer-description">{{ offer.description }}</p>
             </div>
           </div>
         }

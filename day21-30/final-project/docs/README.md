@@ -34,8 +34,7 @@ The system allows admins to manage products, create and process orders, monitor 
 
 ### 📊 Dashboard  
 - Create new orders (**Create** operation).  
-- Displays available products with price & quantity.  
-- Supports **coupon application** (from Offers page).  
+- Displays available products with price & quantity.    
 
 ---
 

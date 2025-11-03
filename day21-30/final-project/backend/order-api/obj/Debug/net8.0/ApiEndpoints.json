@@ -84,7 +84,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProductsController",
+    "ContainingType": "OrderManagementAPI.Controllers.ProductsController",
     "Method": "GetProducts",
     "RelativePath": "api/Products",
     "HttpMethod": "GET",
