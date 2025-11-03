@@ -175,6 +175,7 @@ C:\Users\Administrator\Desktop\claysys-training\day21-30\final-project\backend\o
 C:\Users\Administrator\Desktop\claysys-training\day21-30\final-project\backend\order-api\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
 C:\Users\Administrator\Desktop\claysys-training\day21-30\final-project\backend\order-api\bin\Debug\net8.0\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
 C:\Users\Administrator\Desktop\claysys-training\day21-30\final-project\backend\order-api\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\Administrator\Desktop\claysys-training\day21-30\final-project\backend\order-api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\A RAHUL KRISHNAN\Desktop\claysys-training\day21-30\final-project\backend\order-api\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\A RAHUL KRISHNAN\Desktop\claysys-training\day21-30\final-project\backend\order-api\bin\Debug\net8.0\appsettings.json
 C:\Users\A RAHUL KRISHNAN\Desktop\claysys-training\day21-30\final-project\backend\order-api\bin\Debug\net8.0\order-api.staticwebassets.endpoints.json
@@ -353,4 +354,3 @@ C:\Users\A RAHUL KRISHNAN\Desktop\claysys-training\day21-30\final-project\backen
 C:\Users\A RAHUL KRISHNAN\Desktop\claysys-training\day21-30\final-project\backend\order-api\obj\Debug\net8.0\order-api.pdb
 C:\Users\A RAHUL KRISHNAN\Desktop\claysys-training\day21-30\final-project\backend\order-api\obj\Debug\net8.0\order-api.genruntimeconfig.cache
 C:\Users\A RAHUL KRISHNAN\Desktop\claysys-training\day21-30\final-project\backend\order-api\obj\Debug\net8.0\ref\order-api.dll
-C:\Users\Administrator\Desktop\claysys-training\day21-30\final-project\backend\order-api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -23,57 +23,61 @@ namespace OrderManagementAPI.Repositories
                 if (order.OrderItems == null || order.OrderItems.Count == 0)
                     return (false, "Order must contain at least one item.", 0);
 
-                decimal totalOrderPrice = 0;
-
-                // Check stock for all products
+                // 1️⃣ Check stock for all products
                 foreach (var item in order.OrderItems)
                 {
                     var stockCmd = new SqlCommand("SELECT Stock FROM Products WHERE ProductId = @pid", conn, tx);
                     stockCmd.Parameters.AddWithValue("@pid", item.ProductId);
                     var stockResult = stockCmd.ExecuteScalar();
+
                     if (stockResult == null)
                         throw new Exception($"Product not found: {item.ProductId}");
+
                     int stock = (int)stockResult;
                     if (stock < item.Quantity)
                         throw new Exception($"Insufficient stock for product {item.ProductId}. Available: {stock}, Required: {item.Quantity}");
                 }
 
-                // Insert order
-                var orderCmd = new SqlCommand("INSERT INTO Orders (CustomerName) OUTPUT INSERTED.OrderId VALUES (@CustomerName)", conn, tx);
+                // 2️⃣ Insert order
+                var orderCmd = new SqlCommand(@"
+                    INSERT INTO Orders (CustomerName, OrderDate, Status, TotalPrice)
+                    OUTPUT INSERTED.OrderId 
+                    VALUES (@CustomerName, @OrderDate, @Status, @TotalPrice)", conn, tx);
+
                 orderCmd.Parameters.AddWithValue("@CustomerName", order.CustomerName);
+                orderCmd.Parameters.AddWithValue("@OrderDate", order.OrderDate);
+                orderCmd.Parameters.AddWithValue("@Status", order.Status);
+                orderCmd.Parameters.AddWithValue("@TotalPrice", order.TotalPrice);
                 int orderId = (int)orderCmd.ExecuteScalar();
 
-                // Insert items + reduce stock + total
+                // 3️⃣ Insert items and reduce stock
                 foreach (var item in order.OrderItems)
                 {
                     var priceCmd = new SqlCommand("SELECT Price FROM Products WHERE ProductId=@pid", conn, tx);
                     priceCmd.Parameters.AddWithValue("@pid", item.ProductId);
-                    var result = priceCmd.ExecuteScalar();
-                    if (result == null) throw new Exception($"Invalid ProductId: {item.ProductId}");
-                    decimal price = (decimal)result;
+                    var priceResult = priceCmd.ExecuteScalar();
 
-                    decimal itemTotal = price * item.Quantity;
-                    totalOrderPrice += itemTotal;
+                    if (priceResult == null)
+                        throw new Exception($"Invalid ProductId: {item.ProductId}");
 
-                    var insertItem = new SqlCommand(@"INSERT INTO OrderItems (OrderId, ProductId, Quantity, Price)
-                                                      VALUES (@OrderId,@ProductId,@Quantity,@Price)", conn, tx);
+                    decimal price = (decimal)priceResult;
+
+                    // Insert into OrderItems
+                    var insertItem = new SqlCommand(@"
+                        INSERT INTO OrderItems (OrderId, ProductId, Quantity, Price)
+                        VALUES (@OrderId,@ProductId,@Quantity,@Price)", conn, tx);
                     insertItem.Parameters.AddWithValue("@OrderId", orderId);
                     insertItem.Parameters.AddWithValue("@ProductId", item.ProductId);
                     insertItem.Parameters.AddWithValue("@Quantity", item.Quantity);
                     insertItem.Parameters.AddWithValue("@Price", price);
                     insertItem.ExecuteNonQuery();
 
+                    // Reduce stock
                     var updateStock = new SqlCommand("UPDATE Products SET Stock = Stock - @Quantity WHERE ProductId=@ProductId", conn, tx);
                     updateStock.Parameters.AddWithValue("@Quantity", item.Quantity);
                     updateStock.Parameters.AddWithValue("@ProductId", item.ProductId);
                     updateStock.ExecuteNonQuery();
                 }
-
-                // Update total
-                var totalCmd = new SqlCommand("UPDATE Orders SET TotalPrice=@Total WHERE OrderId=@OrderId", conn, tx);
-                totalCmd.Parameters.AddWithValue("@Total", totalOrderPrice);
-                totalCmd.Parameters.AddWithValue("@OrderId", orderId);
-                totalCmd.ExecuteNonQuery();
 
                 tx.Commit();
                 return (true, "Order created successfully", orderId);
