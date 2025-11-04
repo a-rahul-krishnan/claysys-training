@@ -27,7 +27,6 @@ export class Statistics implements OnInit {
     failed: 0,
     totalRevenue: 0
   };
-  loading = true;
 
   constructor(private orderService: OrderService) {}
 
@@ -36,16 +35,13 @@ export class Statistics implements OnInit {
   }
 
   loadStatistics(): void {
-    this.loading = true;
     this.orderService.getAllOrders().subscribe({
       next: (orders) => {
         this.calculateStats(orders);
-        this.loading = false;
       },
       error: (err) => {
         console.error('Error loading statistics:', err);
         alert('Failed to load statistics');
-        this.loading = false;
       }
     });
   }
