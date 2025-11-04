@@ -23,7 +23,7 @@ namespace OrderManagementAPI.Repositories
                 if (order.OrderItems == null || order.OrderItems.Count == 0)
                     return (false, "Order must contain at least one item.", 0);
 
-                // 1️⃣ Check stock for all products
+                //  Check stock for all products
                 foreach (var item in order.OrderItems)
                 {
                     var stockCmd = new SqlCommand("SELECT Stock FROM Products WHERE ProductId = @pid", conn, tx);
@@ -38,7 +38,7 @@ namespace OrderManagementAPI.Repositories
                         throw new Exception($"Insufficient stock for product {item.ProductId}. Available: {stock}, Required: {item.Quantity}");
                 }
 
-                // 2️⃣ Insert order
+                //  Insert order
                 var orderCmd = new SqlCommand(@"
                     INSERT INTO Orders (CustomerName, OrderDate, Status, TotalPrice)
                     OUTPUT INSERTED.OrderId 
@@ -50,7 +50,7 @@ namespace OrderManagementAPI.Repositories
                 orderCmd.Parameters.AddWithValue("@TotalPrice", order.TotalPrice);
                 int orderId = (int)orderCmd.ExecuteScalar();
 
-                // 3️⃣ Insert items and reduce stock
+                //  Insert items and reduce stock
                 foreach (var item in order.OrderItems)
                 {
                     var priceCmd = new SqlCommand("SELECT Price FROM Products WHERE ProductId=@pid", conn, tx);
