@@ -8,7 +8,6 @@ export interface Offer {
   title: string;
   discount: number;
   couponCode: string;
-  description: string;
   color: string;
 }
 
@@ -19,13 +18,13 @@ export interface Offer {
   styleUrl: './offers.css',
 })
 export class Offers {
+
    offers: Offer[] = [
     {
       id: 1,
       title: '10% Off',
       discount: 10,
       couponCode: 'SAVE10',
-      description: 'Get 10% off on your order',
       color: '#00afff'
     },
     {
@@ -33,7 +32,6 @@ export class Offers {
       title: '20% Off',
       discount: 20,
       couponCode: 'SAVE20',
-      description: 'Get 20% off on your order',
       color: '#70b873'
     },
     {
@@ -41,7 +39,6 @@ export class Offers {
       title: '15% Off',
       discount: 15,
       couponCode: 'SAVE15',
-      description: 'Get 15% off on your order',
       color: '#ff6b6b'
     },
     {
@@ -49,9 +46,21 @@ export class Offers {
       title: '25% Off',
       discount: 25,
       couponCode: 'SAVE25',
-      description: 'Get 25% off on your order',
       color: '#ffa500'
     }
   ];
+  filteredOffers: Offer[] = this.offers;
+  searchQuery = '';
 
+    onSearchChange(): void {
+    const query = this.searchQuery.toLowerCase().trim();
+    if (!query) {
+      this.filteredOffers = this.offers;
+    } else {
+      this.filteredOffers = this.offers.filter(O =>
+        O.couponCode.toLowerCase().includes(query) ||
+        O.discount.toString().includes(query)
+      );
+    }
+  }
 }

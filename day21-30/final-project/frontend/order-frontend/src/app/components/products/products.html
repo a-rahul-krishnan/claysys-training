@@ -2,7 +2,10 @@
   <app-sidebar></app-sidebar>
   
   <div class="main">
-    <app-header [pageTitle]="'Products'"></app-header>
+    <app-header [pageTitle]="'Products'"
+    [searchQuery]="searchQuery"
+    (searchChange)="searchQuery = $event; onSearchChange()">
+  </app-header>
     
     <div class="content">
       <div class="section-header">
@@ -19,7 +22,7 @@
             </tr>
           </thead>
           <tbody>
-            @for (product of products; track product.productId) {
+            @for (product of filteredProducts; track product.productId) {
               <tr>
                 <td>#{{ product.productId }}</td>
                 <td>{{ product.name }}</td>
@@ -29,7 +32,7 @@
           </tbody>
         </table>
 
-        @if (products.length === 0) {
+        @if (filteredProducts.length === 0) {
           <div class="no-products">
             No products available
           </div>

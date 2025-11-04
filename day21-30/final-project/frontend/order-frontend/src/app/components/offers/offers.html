@@ -2,7 +2,10 @@
   <app-sidebar></app-sidebar>
   
   <div class="main">
-    <app-header [pageTitle]="'Offers'"></app-header>
+    <app-header [pageTitle]="'Offers'"
+    [searchQuery]="searchQuery"
+    (searchChange)="searchQuery = $event; onSearchChange()"
+    ></app-header>
     
     <div class="content">
       <div class="section-header">
@@ -10,7 +13,7 @@
       </div>
 
       <div class="offers-grid">
-        @for (offer of offers; track offer.couponCode) {
+        @for (offer of filteredOffers; track offer.couponCode) {
           <div class="offer-card" [style.border-color]="offer.color">
             <div class="offer-header" [style.background-color]="offer.color">
               <h3>{{ offer.title }}</h3>
@@ -21,6 +24,11 @@
           </div>
         }
       </div>
+       @if (filteredOffers.length === 0) {
+          <div class="no-products">
+            No products found for "{{ searchQuery }}"
+          </div>
+        }
     </div>
   </div>
 </div>

@@ -28,6 +28,7 @@ button:disabled {
   grid-template-columns: 20% 80%;
   gap: 1rem;
   padding: 1rem;
+  margin-right:1rem ;
 }
 
 .main {

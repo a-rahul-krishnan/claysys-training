@@ -85,8 +85,7 @@
               "RelativeToolTip": "Repositories\\OrderRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T23:14:39.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T23:14:39.977Z"
             },
             {
               "$type": "Document",
@@ -146,8 +145,7 @@
               "RelativeToolTip": "Controllers\\OrdersController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T11:36:13.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T11:36:13.911Z"
             },
             {
               "$type": "Document",
@@ -217,7 +215,7 @@
               "RelativeDocumentMoniker": "order-api.csproj",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\claysys-training\\day21-30\\final-project\\backend\\order-api\\order-api.csproj",
               "RelativeToolTip": "order-api.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-11-03T11:36:13.922Z",
               "EditorCaption": ""

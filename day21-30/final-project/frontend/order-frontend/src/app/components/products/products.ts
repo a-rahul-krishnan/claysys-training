@@ -13,6 +13,8 @@ import { Product } from '../../models/product';
 })
 export class Products implements OnInit {
    products: Product[] = [];
+   filteredProducts: Product[] = [];
+   searchQuery = '';
 
   constructor(private productService: ProductService) {}
 
@@ -24,12 +26,26 @@ export class Products implements OnInit {
     this.productService.getProducts().subscribe({
       next: (data) => {
         this.products = data;
+        this.filteredProducts = data;
       },
       error: (err) => {
         console.error('Error loading products:', err);
         alert('Failed to load products');
       }
     });
+  }
+
+  
+  onSearchChange(): void {
+    const query = this.searchQuery.toLowerCase().trim();
+    if (!query) {
+      this.filteredProducts = this.products;
+    } else {
+      this.filteredProducts = this.products.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.productId.toString().includes(query)
+      );
+    }
   }
 
 }
